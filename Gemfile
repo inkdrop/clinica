@@ -32,4 +32,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 gem 'tiny_mce'
-gem 'will_paginate'
+gem 'will_paginate', "~> 3.0.pre2"

@@ -1,27 +1,13 @@
 <h1>II. Notícias</h1>
+<% if current_user %><%= link_to 'Criar notícia', new_news_path %><% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @news.each do |news| %>
-  <tr>
-    <td><%= news.title %></td>
-    <td><%= news.content %></td>
-    <td><%= news.user %></td>
-    <td><%= link_to 'Show', news %></td>
-    <td><%= link_to 'Edit', edit_news_path(news) %></td>
-    <td><%= link_to 'Destroy', news, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= will_paginate @news %>
+<hr/>
+<% @news.each do |n| %>
+  <div>
+    <%= n.created_at %> | Por <%= n.user %>
+    <h2><%= n.title %></h2>
+    <%= n.content.html_safe %>
+  </div>
+  <hr/>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New News', new_news_path %>

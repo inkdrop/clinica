@@ -1,4 +1,5 @@
 <h1>III. Temas</h1>
+<% if current_user %><%= link_to 'Criar tema', new_subject_path %><% end %>
 
 <table>
   <tr>
@@ -26,4 +27,3 @@
 
 <br />
 
-<%= link_to 'New Subject', new_subject_path %>
