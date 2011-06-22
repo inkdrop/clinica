@@ -1,4 +1,9 @@
 class NewsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:show, :index]
+
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
+
   # GET /news
   # GET /news.xml
   def index
@@ -41,6 +46,7 @@ class NewsController < ApplicationController
   # POST /news.xml
   def create
     @news = News.new(params[:news])
+    @news.user = current_user
 
     respond_to do |format|
       if @news.save

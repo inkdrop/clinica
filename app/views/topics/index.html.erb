@@ -20,6 +20,7 @@
     <td><%= topic.user %></td>
     <td><%= topic.subject %></td>
     <td><%= link_to 'Show', subject_topic_path(topic.subject,topic) %></td>
+    <td><%= link_to 'Destroy', [topic.subject,topic], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

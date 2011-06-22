@@ -6,6 +6,9 @@ Clinica::Application.routes.draw do
   resources :subjects do
     resources :topics
   end
+  
+  resources :contacts
+  match "contato" => "contacts#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

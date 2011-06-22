@@ -31,3 +31,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'devise'
+gem 'tiny_mce'
+gem 'will_paginate'

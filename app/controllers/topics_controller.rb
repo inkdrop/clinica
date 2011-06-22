@@ -1,4 +1,9 @@
 class TopicsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:show, :index]
+
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
+  
   # GET /topics
   # GET /topics.xml
   def index
@@ -14,6 +19,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.xml
   def show
+    @subject = Subject.find(params[:subject_id])
     @topic = Topic.find(params[:id])
 
     respond_to do |format|
@@ -38,6 +44,7 @@ class TopicsController < ApplicationController
   # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
+    @subject = Subject.find(params[:subject_id])
   end
 
   # POST /topics
@@ -70,12 +77,10 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.xml
   def destroy
+    @subject = Subject.find(params[:subject_id])
     @topic = Topic.find(params[:id])
     @topic.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(topics_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to subject_path(@subject)
   end
 end

@@ -1,4 +1,9 @@
 class SubjectsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:show, :index]
+
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
+
   # GET /subjects
   # GET /subjects.xml
   def index

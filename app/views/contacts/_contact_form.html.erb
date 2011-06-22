@@ -1,0 +1,47 @@
+<fieldset class="span-11">
+  <legend>Fale conosco</legend>
+  <%= form_for(@contact) do |f| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+        <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :firstName %><br />
+      <%= f.text_field :firstName %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :lastName %><br />
+      <%= f.text_field :lastName %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :age %><br />
+      <%= f.text_field :age %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :message %><br />
+      <%= f.text_area :message, :class => "mceEditor" %>
+    </div>
+    
+    <ul><li>Incluir um Captcha aqui!</li></ul>
+
+    <div class="actions">
+      <%= f.submit :value => :send %>
+    </div>
+  <% end %>
+</fieldset>

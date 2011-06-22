@@ -1,0 +1,13 @@
+<h1>Lista de Mensagens</h1>
+
+<% @contacts.each do |c| %>
+  <hr/>
+  <%= c.firstName << " " << c.lastName %>
+  <ul>
+    <li>Idade: <%= c.age %></li>
+    <li>Email: <%= c.email %></li>
+  </ul>
+  <%= link_to 'Mostrar', contact_path(c) %>
+  <%= link_to 'Excluir', c, :confirm => 'Tem certeza?', :method => :delete %>
+  
+<% end %>

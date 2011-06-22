@@ -1,30 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @topic.title %>
-</p>
+<h1><%= link_to @subject.title,subject_path(@subject) %> > <%= link_to @topic.title,subject_topic_path(@subject,@topic) %></h1>
 
 <p>
-  <b>Description:</b>
   <%= @topic.description %>
 </p>
 
 <p>
-  <b>Content:</b>
   <%= @topic.content %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b>Autor:</b>
   <%= @topic.user %>
 </p>
 
-<p>
-  <b>Subject:</b>
-  <%= @topic.subject %>
-</p>
 
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_subject_topic_path(@topic) %> |
+<%= link_to 'Back', subject_topics_path(@subject) %>

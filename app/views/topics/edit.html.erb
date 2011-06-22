@@ -1,6 +1,6 @@
-<h1>Editing topic</h1>
+<h1>Editando <%= link_to @subject.title, subject_path(@subject) %> > <%= link_to @topic.title, subject_topic_path(@subject,@topic) %></h1>
 
-<%= render 'form' %>
+<%= render 'edit_form' %>
 
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Show', subject_topic_path(@subject,@topic) %> |
+<%= link_to 'Topics', subject_topics_path(@subject) %>

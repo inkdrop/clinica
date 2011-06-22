@@ -1,22 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
   <%= @subject.title %>
 </p>
 
 <p>
-  <b>Description:</b>
   <%= @subject.description %>
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @subject.content %>
+  <%= @subject.content.html_safe %>
 </p>
 
 <p>
-  <b>User:</b>
   <%= @subject.user %>
 </p>
 
