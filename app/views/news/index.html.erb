@@ -1,13 +1,15 @@
 <h1>II. Notícias</h1>
 <% if current_user %><%= link_to 'Criar notícia', new_news_path %><% end %>
-
-<%= will_paginate @news %>
+<br/>
+<%= page_entries_info @news %>
 <hr/>
 <% @news.each do |n| %>
   <div>
-    <%= n.created_at %> | Por <%= n.user %>
-    <h2><%= n.title %></h2>
+    <span style="color:#AAAAAA;"><%= n.created_at %> | Por <%= n.user %></span>
+    <h2 style="color:#333333"><%= n.title %></h2>
     <%= n.content.html_safe %>
   </div>
   <hr/>
 <% end %>
+
+<%= will_paginate @news %>
