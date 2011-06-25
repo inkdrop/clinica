@@ -1,29 +1,15 @@
 <h1>III. Temas</h1>
 <% if current_user %><%= link_to 'Criar tema', new_subject_path %><% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @subjects.each do |subject| %>
-  <tr>
-    <td><%= subject.title %></td>
-    <td><%= subject.description %></td>
-    <td><%= subject.content %></td>
-    <td><%= subject.user %></td>
-    <td><%= link_to 'Show', subject %></td>
-    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-    <td><%= link_to 'Destroy', subject, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<br/>
+<%= page_entries_info @subjects %>
+<hr/>
+<% @subjects.each do |s| %>
+  <div>
+    <h2 style="color:#333333"><%= link_to s.title, subjects_path(s) %></h2>
+  </div>
+  <hr/>
 <% end %>
-</table>
 
-<br />
+<%= will_paginate @subjects %>
 

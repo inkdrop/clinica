@@ -7,7 +7,7 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.xml
   def index
-    @subjects = Subject.all
+    @subjects = Subject.paginate :page => params[:page], :order => 'title ASC'
 
     respond_to do |format|
       format.html # index.html.erb

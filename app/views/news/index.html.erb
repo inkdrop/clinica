@@ -6,7 +6,7 @@
 <% @news.each do |n| %>
   <div>
     <span style="color:#AAAAAA;"><%= n.created_at %> | Por <%= n.user %></span>
-    <h2 style="color:#333333"><%= n.title %></h2>
+    <h2 style="color:#333333"><%= link_to n.title, news_path(n) %></h2>
     <%= n.content.html_safe %>
   </div>
   <hr/>

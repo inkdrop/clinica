@@ -3,6 +3,9 @@ class Subject < ActiveRecord::Base
   
   has_many :topics, :dependent => :destroy
   
+  cattr_reader :per_page
+  @@per_page = 4
+  
   def to_s
     self.title
   end
