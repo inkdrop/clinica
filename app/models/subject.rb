@@ -3,8 +3,7 @@ class Subject < ActiveRecord::Base
   
   has_many :topics, :dependent => :destroy
   
-  cattr_reader :per_page
-  @@per_page = 4
+  paginate_alphabetically :by => :title, :show_all_letters => true
   
   def to_s
     self.title

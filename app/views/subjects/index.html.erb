@@ -1,15 +1,22 @@
 <h1>III. Temas</h1>
 <% if current_user %><%= link_to 'Criar tema', new_subject_path %><% end %>
 
-<br/>
-<%= page_entries_info @subjects %>
-<hr/>
-<% @subjects.each do |s| %>
-  <div>
-    <h2 style="color:#333333"><%= link_to s.title, subjects_path(s) %></h2>
-  </div>
-  <hr/>
-<% end %>
-
-<%= will_paginate @subjects %>
+<ul class='pagination'>
+  <strong>Jump to:</strong>
+  <li><%= link_to "Todos", subjects_path %></li>
+  <% Subject.pagination_letters.each do |letter| %>
+    <li><%= link_to(letter, subjects_path(:letter => letter)) %></li>
+  <% end %>
+  
+  <% if @subjects.size > 0 %>
+    <% @subjects.each do |s| %>
+      <div>
+        <h3 style="color:#333333"><%= link_to s.title, subject_path(s) %></h3>
+      </div>
+      <hr/>
+    <% end %>
+  <% else %>
+    <h3>Nenhum tema econtrado</h3>
+  <% end %>  
+</ul>
 

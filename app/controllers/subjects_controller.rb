@@ -7,8 +7,11 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.xml
   def index
-    @subjects = Subject.paginate :page => params[:page], :order => 'title ASC'
-
+    if params[:letter] == nil
+      @subjects = Subject.all
+    else
+      @subjects = Subject.alphabetical_group(params[:letter])
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @subjects }
