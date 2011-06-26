@@ -1,22 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subject_content do %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <%= @subject.title %>
-</p>
+  <p>
+    <%= @subject.title %>
+  </p>
 
-<p>
-  <%= @subject.description %>
-</p>
+  <p>
+    <%= @subject.description %>
+  </p>
 
-<p>
-  <%= @subject.content.html_safe %>
-</p>
+  <p>
+    <%= @subject.content.html_safe %>
+  </p>
 
-<p>
-  <%= @subject.user %>
-</p>
+  <p>
+    <%= @subject.user %>
+  </p>
 
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %> |
-<%= link_to 'New Topic', new_subject_topic_path(@subject) %>
+  <%= link_to 'Edit', edit_subject_path(@subject) %> |
+  <%= link_to 'Back', subjects_path %> |
+  <%= link_to 'New Topic', new_subject_topic_path(@subject) %>
+<% end %>

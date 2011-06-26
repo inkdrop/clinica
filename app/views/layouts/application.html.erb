@@ -43,7 +43,7 @@
       
       <% if alert %><p class="alert"><%= alert %></p><% end %>
 
-      <%= yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </div><!--content-->
     
     <!-------------------------------FOOTER------------------------------------------->
