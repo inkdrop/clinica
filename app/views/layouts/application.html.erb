@@ -15,12 +15,12 @@
   <%= include_tiny_mce_if_needed %>
 </head>
 <body>
-
+  <div id="wrapper">
   <div class="container">
   
     <!-------------------------------HEADER------------------------------------------->    
 
-    <div id="header">
+    <div id="header" class="push-1 span-22 last">
       <div id="userMenu">
         <ul class="hmenu">
           <%= render 'devise/menu/login_items' %> |
@@ -37,8 +37,8 @@
     </div><!--header-->
     
     <!-------------------------------CONTENT------------------------------------------>
-
-    <div id="content">
+    
+    <div id="content" class="push-1 span-22 last">
       <% if notice %><p class="info"><%= notice %></p><% end %>
       
       <% if alert %><p class="alert"><%= alert %></p><% end %>
@@ -48,9 +48,10 @@
     
     <!-------------------------------FOOTER------------------------------------------->
         
-    <div id="footer">
+    <div id="footer" class="push-1 span-22 last">
     </div><!--footer-->
 
+  </div>
   </div>
 </body>
 </html>

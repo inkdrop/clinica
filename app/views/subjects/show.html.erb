@@ -1,13 +1,7 @@
 <% content_for :subject_content do %>
-  <p id="notice"><%= notice %></p>
+  <h2><%= @subject.title %></h2>
 
-  <p>
-    <%= @subject.title %>
-  </p>
-
-  <p>
-    <%= @subject.description %>
-  </p>
+  <h3><%= @subject.description %></h3>
 
   <p>
     <%= @subject.content.html_safe %>
