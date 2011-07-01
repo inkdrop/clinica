@@ -1,5 +1,6 @@
 <h1>II. Notícias</h1>
-<% if current_user %><%= link_to 'Criar notícia', new_news_path %><% end %>
+<hr/>
+<%= link_to 'Criar notícia', new_news_path if current_user %>
 <br/>
 <%= page_entries_info @news %>
 <hr/>

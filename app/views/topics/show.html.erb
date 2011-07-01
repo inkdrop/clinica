@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% content_for :topic_options do %>
+  <%= link_to 'Editar Tópico', edit_subject_topic_path(@subject,@topic) %> |
+<% end %>
+<% content_for :topic_content do %>
+  <p id="notice"><%= notice %></p>
 
-<h1><%= link_to @subject.title,subject_path(@subject) %> > <%= link_to @topic.title,subject_topic_path(@subject,@topic) %></h1>
+  <h2><%= @topic.title %></h2>
 
-<p>
-  <%= @topic.description %>
-</p>
+  <p>
+    <%= @topic.description %>
+  </p>
 
-<p>
-  <%= @topic.content %>
-</p>
+  <p>
+    <%= @topic.content.html_safe %>
+  </p>
 
-<p>
-  <b>Autor:</b>
-  <%= @topic.user %>
-</p>
+  <p>
+    <b>Autor:</b>
+    <%= @topic.user %>
+  </p>
 
-
-<%= link_to 'Edit', edit_subject_topic_path(@topic) %> |
-<%= link_to 'Back', subject_topics_path(@subject) %>
+<% end %>

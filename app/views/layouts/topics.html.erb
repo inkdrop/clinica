@@ -1,0 +1,35 @@
+<% content_for :content do %>
+
+  <%= stylesheet_link_tag 'subjects', :media => 'screen' %>
+
+  <h1>III. Temas</h1>
+  <hr/>
+  <% if current_user %>
+    <%= link_to 'Criar tema', new_subject_path %> |
+    <%= link_to 'Editar Tema', edit_subject_path(@subject) %> |
+    <%= link_to 'Criar Tópico', new_subject_topic_path(@subject) %> |
+    <% content_for :topic_options do %><% end %>
+    <%= link_to 'Voltar', subject_path(@subject) %>
+  <% end %>
+
+  <ul class='pagination'>
+    <strong>Jump to:</strong>
+    <li><%= link_to "Todos", subjects_path %></li>
+    <% Subject.pagination_letters.each do |letter| %>
+      <li><%= link_to(letter, subjects_path(:letter => letter)) %></li>
+    <% end %>
+  </ul>
+
+  <h1><%= @subject.title %></h1>
+  <%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %>
+  <h3><%= @subject.description %></h3>
+
+  <p>
+    <%= @subject.content.html_safe %>
+  </p>
+  <hr/>
+  <%= content_for(:topic_content) %>
+
+<% end %>
+
+<%= render :file => 'layouts/application' %>
