@@ -1,1 +1,4 @@
-<%= link_to topic.title, subject_topic_path(topic.subject, topic) %>
+<h2><%= link_to topic.title, subject_topic_path(topic.subject, topic) %></h2>
+[<%= link_to 'editar', edit_subject_topic_path(@subject, topic) %>]
+<hr/>
+<%= topic.content.html_safe %>

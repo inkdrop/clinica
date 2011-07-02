@@ -1,6 +1,6 @@
-<h1>Editing subject</h1>
-
+<% content_for :subject_content do %>
 <%= render 'form' %>
 
 <%= link_to 'Show', @subject %> |
-<%= link_to 'Back', subjects_path %>
+<%= link_to 'Back', subject_path(@subject) %>
+<% end %>

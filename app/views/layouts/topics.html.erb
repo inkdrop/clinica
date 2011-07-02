@@ -20,14 +20,6 @@
     <% end %>
   </ul>
 
-  <h1><%= @subject.title %></h1>
-  <%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %>
-  <h3><%= @subject.description %></h3>
-
-  <p>
-    <%= @subject.content.html_safe %>
-  </p>
-  <hr/>
   <%= content_for(:topic_content) %>
 
 <% end %>

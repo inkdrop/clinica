@@ -6,7 +6,7 @@
   <hr/>
   <% if current_user %>
     <%= link_to 'Criar tema', new_subject_path if current_user %>
-    <% content_for :subject_options do %><% end %>
+    <%= content_for :subject_options do %><% end %>
   <% end %>
 
   <ul class='pagination'>

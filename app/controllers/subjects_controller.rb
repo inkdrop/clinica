@@ -53,7 +53,7 @@ class SubjectsController < ApplicationController
 
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to(@subject, :notice => 'Subject was successfully created.') }
+        format.html { redirect_to(@subject, :notice => 'Tema criado com sucesso.') }
         format.xml  { render :xml => @subject, :status => :created, :location => @subject }
       else
         format.html { render :action => "new" }
@@ -69,7 +69,7 @@ class SubjectsController < ApplicationController
 
     respond_to do |format|
       if @subject.update_attributes(params[:subject])
-        format.html { redirect_to(@subject, :notice => 'Subject was successfully updated.') }
+        format.html { redirect_to(@subject, :notice => 'Tema atualizado com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
