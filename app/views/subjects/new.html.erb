@@ -1,5 +1,7 @@
-<h1>III. Temas > Novo tema</h1>
+<%= content_for :subject_content do %>
+<h2><%=t :new_subject %></h2>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', subjects_path %>
+<% end %>

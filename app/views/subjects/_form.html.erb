@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, :value => "Oi" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
@@ -24,6 +24,6 @@
     <%= f.text_area :content, :class => "mceEditor" %>
   </div>
   <div class="actions">
-    <%= f.submit :value => "Salvar" %>
+    <%= f.submit %>
   </div>
 <% end %>

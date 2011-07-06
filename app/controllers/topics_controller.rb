@@ -65,7 +65,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
-        format.html { redirect_to(@topic, :notice => 'Topic was successfully updated.') }
+        format.html { redirect_to(subject_topic_path(params[:subject_id],@topic), :notice => t(:topic_update)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

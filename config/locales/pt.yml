@@ -1,0 +1,28 @@
+pt:
+  topic_update: Tópico atualizado com sucesso.
+  new_subject: Novo Tema
+  #Atributos dos form helpers
+  helpers:
+    label:
+      subject:
+        title: Título
+        description: Descrição
+        content: Conteúdo
+      contact:
+        firstName: Nome
+        lastName: Sobrenome
+        age: Idade
+        message: Mensagem
+    submit:
+      subject:
+        create: Criar Tema
+        update: Salvar Tema
+      news:
+        create: Criar Notícia
+        update: Salvar Notícia
+      topic:
+        create: Criar Tópico
+        update: Salvar Tópico
+      contact:
+        create: Enviar
+

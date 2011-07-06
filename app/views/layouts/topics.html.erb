@@ -1,4 +1,4 @@
-<% content_for :content do %>
+<%= content_for :content do %>
 
   <%= stylesheet_link_tag 'subjects', :media => 'screen' %>
 
@@ -8,7 +8,7 @@
     <%= link_to 'Criar tema', new_subject_path %> |
     <%= link_to 'Editar Tema', edit_subject_path(@subject) %> |
     <%= link_to 'Criar Tópico', new_subject_topic_path(@subject) %> |
-    <% content_for :topic_options do %><% end %>
+    <%= content_for :topic_options do %><% end %>
     <%= link_to 'Voltar', subject_path(@subject) %>
   <% end %>
 

@@ -3,18 +3,15 @@
 <% end %>
 <% content_for :topic_content do %>
   <h1><%= @subject.title %> &rarr; <%= @topic.title %></h1>
-  [<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]
+  <% if current_user %>[<%= link_to 'editar', edit_subject_path(@subject) %>]<% end %>
+  <% if current_user %>[<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]<% end %>
+  <%= @topic.created_at.strftime("%e %B, %Y") %> | <%= @topic.user %>
   <p>
     <%= @topic.description %>
   </p>
 
   <p>
     <%= @topic.content.html_safe %>
-  </p>
-
-  <p>
-    <b>Autor:</b>
-    <%= @topic.user %>
   </p>
 
 <% end %>
