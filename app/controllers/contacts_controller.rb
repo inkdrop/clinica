@@ -2,8 +2,6 @@ class ContactsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:create, :new]
   
-  uses_tiny_mce :only => [:new, :create, :edit, :update]
-  
   #acesso somente para admin
   def index
     @contacts = Contact.all

@@ -1,4 +1,4 @@
-<fieldset class="span-11">
+<fieldset class="span-10">
   <legend>Fale conosco</legend>
   <%= form_for(@contact) do |f| %>
     <% if @contact.errors.any? %>
@@ -35,7 +35,7 @@
     
     <div class="field">
       <%= f.label :message %><br />
-      <%= f.text_area :message, :class => "mceEditor" %>
+      <%= f.text_area :message %>
     </div>
     
     <ul><li>Incluir um Captcha aqui!</li></ul>
