@@ -4,8 +4,8 @@
 <hr/>
 <% @news.each do |n| %>
   <div>
-    <span style="color:#AAAAAA;"><%= n.created_at %> | Por <%= n.user %></span>
-    <h2 style="color:#333333"><%= link_to n.title, news_path(n) %></h2>
+    <div class="title"><%= link_to n.title, news_path(n) %></div>
+    <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
     <%= n.content.html_safe %>
   </div>
   <hr/>

@@ -1,17 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <%= @news.title %>
-</p>
-
-<p>
-  <%= @news.content.html_safe %>
-</p>
-
-<p>
-  <%= @news.user %>
-</p>
-
-
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+<ul class="tmenu">
+  <li class="title"><%= @news.title %></li>
+  <li><% if current_user %>[<%= link_to 'editar', edit_news_path(@news) %>]<% end %></li>
+</ul>
+<div class="tfooter"><%= @news.created_at.strftime("%e %B, %Y %H:%M") %> | <%= @news.user %></div>
+<hr/>
+<%= @news.content.html_safe %>
