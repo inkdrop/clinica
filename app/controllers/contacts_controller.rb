@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   
   #acesso somente para admin
   def index
-    @contacts = Contact.all
+    @contacts = Contact.paginate :page => params[:page], :order => 'created_at DESC'
   end
 
   #acesso somente para admin

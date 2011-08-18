@@ -1,5 +1,6 @@
-<h1>Lista de Mensagens</h1>
+<h2>Lista de Mensagens</h2>
 
+<%= page_entries_info @contacts %>
 <% @contacts.each do |c| %>
   <hr/>
   <%= c.firstName << " " << c.lastName %>
@@ -11,3 +12,5 @@
   <%= link_to 'Excluir', c, :confirm => 'Tem certeza?', :method => :delete %>
   
 <% end %>
+
+<%= will_paginate @contacts %>
