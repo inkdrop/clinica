@@ -1,4 +1,5 @@
-<h2><%= link_to topic.title, subject_topic_path(topic.subject, topic) %></h2>
-[<%= link_to 'editar', edit_subject_topic_path(@subject, topic) %>]
+<h2 class="topic-header"><%= link_to topic.title, subject_topic_path(topic.subject, topic) %> 
+  <small>[<%= link_to 'editar', edit_subject_topic_path(@subject, topic) %>]</small>
+</h2>
 <hr/>
 <%= topic.content.html_safe %>

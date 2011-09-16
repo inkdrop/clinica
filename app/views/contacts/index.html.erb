@@ -1,16 +1,23 @@
 <h2>Lista de Mensagens</h2>
 
 <%= page_entries_info @contacts %>
-<% @contacts.each do |c| %>
-  <hr/>
-  <%= c.firstName << " " << c.lastName %>
-  <ul>
-    <li>Idade: <%= c.age %></li>
-    <li>Email: <%= c.email %></li>
-  </ul>
-  <%= link_to 'Mostrar', contact_path(c) %>
-  <%= link_to 'Excluir', c, :confirm => 'Tem certeza?', :method => :delete %>
-  
-<% end %>
+<hr/>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Email</th>
+    <th>Opções</th>
+  </tr>
+  <% @contacts.each do |c| %>
+    <tr>
+      <td><%= c.firstName << " " << c.lastName %></td>
+      <td><%= c.age %></td>
+      <td><%= c.email %></td>
+      <td><%= link_to 'Mostrar', contact_path(c) %> | <%= link_to 'Excluir', c, :confirm => 'Tem certeza?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  <tr>    
+</table>
 
 <%= will_paginate @contacts %>

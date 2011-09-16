@@ -5,7 +5,7 @@
 <% end %>
 
 <% content_for :subject_content do %>
-  <h1><%= @subject.title %></h1>[<%= link_to 'editar', edit_subject_path(@subject) %>]
+  <h2><%= @subject.title %> <small>[<%= link_to 'editar', edit_subject_path(@subject) %>]</small> </h2>
   <%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %>
 
   <p>

@@ -10,6 +10,10 @@ class ContactsController < ApplicationController
   #acesso somente para admin
   def show
     @contact = Contact.find(params[:id])
+    if !@contact.read
+      @contact.read = true
+      @contact.save
+    end
   end  
     
   #operação não suportada
@@ -23,11 +27,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
-      format.html { redirect_to(new_contact_path, :notice => 'Mensagem enviada com sucesso.') }
-      format.xml  { render :xml => @news, :status => :created, :location => @news }
+      redirect_to(contato_path, :notice => 'Mensagem enviada com sucesso.')
     else
-      format.html { render :action => "new" }
-      format.xml  { render :xml => @news.errors, :status => :unprocessable_entity }
+      redirect_to(contato_path, :notice => 'Nao foi possivel enviar sua mensagem, tente mais tarde.')
     end
   end
   
