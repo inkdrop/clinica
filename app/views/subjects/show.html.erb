@@ -6,7 +6,7 @@
 
 <% content_for :subject_content do %>
   <h2><%= @subject.title %> <small>[<%= link_to 'editar', edit_subject_path(@subject) %>]</small> </h2>
-  <%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %>
+  <div class="tfooter"><%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %></div>
 
   <p>
     <%= @subject.content.html_safe %>

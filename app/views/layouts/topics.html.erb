@@ -2,8 +2,6 @@
 
   <%= stylesheet_link_tag 'subjects', :media => 'screen' %>
 
-  <h1>III. Temas</h1>
-  <hr/>
   <% if current_user %>
     <%= link_to 'Criar tema', new_subject_path %> |
     <%= link_to 'Editar Tema', edit_subject_path(@subject) %> |
@@ -13,7 +11,7 @@
   <% end %>
 
   <ul class='pagination'>
-    <strong>Jump to:</strong>
+    <strong>Ir para:</strong>
     <li><%= link_to "Todos", subjects_path %></li>
     <% Subject.pagination_letters.each do |letter| %>
       <li><%= link_to(letter, subjects_path(:letter => letter)) %></li>

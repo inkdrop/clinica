@@ -1,6 +1,9 @@
 pt:
   topic_update: Tópico atualizado com sucesso.
   new_subject: Novo Tema
+  edit_subject: Editar Tema
+  new_news: Nova Notícia
+  edit_topic: Editar Tópico
   devise:
     sessions:
       user:
@@ -10,7 +13,7 @@ pt:
   #Atributos dos form helpers
   helpers:
     label:
-      subject:
+      subject: 
         title: Título
         description: Descrição
         content: Conteúdo

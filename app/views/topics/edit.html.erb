@@ -1,5 +1,5 @@
 <% content_for :topic_content do %>
-<h2>Editando <%= link_to @subject.title, subject_path(@subject) %> &rarr; <%= link_to @topic.title, subject_topic_path(@subject,@topic) %></h2>
+<h2><%=t :edit_topic %> (<%= link_to @subject.title, subject_path(@subject) %>)</h2>
 
 <%= render 'edit_form' %>
 

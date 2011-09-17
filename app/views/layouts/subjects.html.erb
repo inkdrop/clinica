@@ -9,9 +9,9 @@
 
   <ul class='pagination'>
     <strong>Jump to:</strong>
-    <li><%= link_to "Todos", subjects_path %></li>
+    <li><%= link_to "Todos", temas_path %></li>
     <% Subject.pagination_letters.each do |letter| %>
-      <li><%= link_to(letter, subjects_path(:letter => letter)) %></li>
+      <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
     <% end %>
   </ul>
 

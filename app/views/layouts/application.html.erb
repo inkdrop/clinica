@@ -15,25 +15,29 @@
   <%= include_tiny_mce_if_needed %>
 </head>
 <body>
+  <div id="top-bar">
+    <div id="userMenu" class="container">
+      <ul class="hmenu">
+        <%= render 'devise/menu/login_items' %> |
+        <%= render 'devise/menu/registration_items' %>
+      </ul>
+    </div><!--userMenu-->
+  </div>
+  
   <div id="wrapper">
   <div class="container">
   
     <!-------------------------------HEADER------------------------------------------->    
 
     <div id="header" class="push-1 span-22 last">
-      <div id="userMenu">
-        <ul class="hmenu">
-          <%= render 'devise/menu/login_items' %> |
-          <%= render 'devise/menu/registration_items' %>
-        </ul>
-      </div><!--userMenu-->
       
-      <div id="mainMenu" style="font-size:25px;">
+      
+      <div id="mainMenu" style="font-size:25px; margin-top:50px;">
         <center>
-        <%= link_to "I. Início","/" %> |
-        <%= link_to "II. Notícias",news_index_path %> |
-        <%= link_to "III. Temas",subjects_path %> |
-        <%= link_to "IV. Contato",contato_path %>
+        I. <%= link_to "Início","/" %>
+        II. <%= link_to "Notícias",noticias_path %>
+        III. <%= link_to "Temas",temas_path %>
+        IV. <%= link_to "Contato",contato_path %>
         </center>
       </div><!--mainMenu--> 
     </div><!--header-->

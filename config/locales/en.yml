@@ -4,5 +4,8 @@
 en:
   topic_update: Topic was successfuly updated.
   new_subject: New Subject
+  edit_subject: Edit Subject
+  new_news: Create News
+  edit_topic: Edit Topic
   #Atributos dos models
   

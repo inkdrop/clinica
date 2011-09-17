@@ -10,6 +10,7 @@ Clinica::Application.routes.draw do
   resources :contacts
   match "contato" => "contacts#new"
   match "noticias" => "news#index"
+  match "temas" => "subjects#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

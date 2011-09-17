@@ -2,10 +2,14 @@
 
 <% end %>
 <% content_for :topic_content do %>
-  <h1><%= @subject.title %> &rarr; <%= @topic.title %></h1>
-  <% if current_user %>[<%= link_to 'editar', edit_subject_path(@subject) %>]<% end %>
-  <% if current_user %>[<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]<% end %>
-  <%= @topic.created_at.strftime("%e %B, %Y") %> | <%= @topic.user %>
+  <h2>
+    <%= @subject.title %>
+    <% if current_user %><small>[<%= link_to 'editar', edit_subject_path(@subject) %>]<% end %></small> &rarr; 
+    <%= @topic.title %>
+    <% if current_user %><small>[<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]</small><% end %>
+  </h2>
+  
+  <div class="tfooter"><%= @topic.created_at.strftime("%e %B, %Y") %> | <%= @topic.user %></div>
   <p>
     <%= @topic.description %>
   </p>
