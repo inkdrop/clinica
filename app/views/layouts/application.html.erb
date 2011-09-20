@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Clinica</title>
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-  <%= stylesheet_link_tag 'blueprint/plugins/fancy-type/screen', :media => 'screen' %>
-  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-  <%= include_tiny_mce_if_needed %>
-</head>
-<body>
-  <div id="top-bar">
-    <div id="userMenu" class="container">
-      <ul class="hmenu">
-        <%= render 'devise/menu/login_items' %> |
-        <%= render 'devise/menu/registration_items' %>
-      </ul>
-    </div><!--userMenu-->
-  </div>
-  
-  <div id="wrapper">
-  <div class="container">
-  
-    <!-------------------------------HEADER------------------------------------------->    
+  <head>
+    <meta charset="utf-8">
+    <title>Clinica</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.css', :media => 'screen' %>
+    
+    <!-- fav icons and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-    <div id="header" class="span-22 last">
-      
-      
-      <div id="mainMenu" style="font-size:25px; margin-top:50px;">
-        <center>
-        I. <%= link_to "Início","/" %>
-        II. <%= link_to "Notícias",noticias_path %>
-        III. <%= link_to "Temas",temas_path %>
-        IV. <%= link_to "Contato",contato_path %>
-        </center>
-      </div><!--mainMenu--> 
-    </div><!--header-->
+    <%= javascript_include_tag 'jquery-1.6.4.js' %>    
+    <%= javascript_include_tag 'bootstrap/bootstrap-dropdown.js' %>
+    <%= javascript_include_tag :defaults %>
     
-    <!-------------------------------CONTENT------------------------------------------>
+    <%= stylesheet_link_tag :all %>
+    <%= csrf_meta_tag %>
+    <%= include_tiny_mce_if_needed %>
     
-    <div id="content" class="span-22 last">
+  </head>
+  
+  <body>
+    
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">CIPP Toledo</a>
+          <ul class="nav">
+            <li class="active"><%= link_to "I. Início","/" %></li>
+            <li><%= link_to "II. Notícias",noticias_path %></li>
+            <li><%= link_to "III. Temas",temas_path %></li>
+            <li><%= link_to "IV. Contato",contato_path %></li>
+          </ul>
+          <%= render 'devise/menu/login_items' %>
+          <%= render 'devise/menu/registration_items' %>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
       <% if notice %><p class="info"><%= notice %></p><% end %>
-      
       <% if alert %><p class="alert"><%= alert %></p><% end %>
-
       <%= content_for?(:content) ? yield(:content) : yield %>
-    </div><!--content-->
+      
+      <footer>
+        <p>&copy; CIPP Toledo 2011</p>
+      </footer>
+      
+    </div> <!-- /container -->
     
-    <!-------------------------------FOOTER------------------------------------------->
-        
-    <div id="footer" class="span-22 last">
-    </div><!--footer-->
-
-  </div>
-  </div>
-</body>
+  </body>
 </html>
