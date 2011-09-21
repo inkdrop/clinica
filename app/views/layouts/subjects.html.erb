@@ -7,13 +7,14 @@
     <%= content_for :subject_options do %><% end %>
   <% end %>
 
-  <ul class='pagination'>
-    <strong>Jump to:</strong>
-    <li><%= link_to "Todos", temas_path %></li>
-    <% Subject.pagination_letters.each do |letter| %>
-      <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
-    <% end %>
-  </ul>
+  <div class="pagination">
+    <ul>
+      <li><%= link_to "Todos", temas_path %></li>
+      <% Subject.pagination_letters.each do |letter| %>
+        <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <%= content_for(:subject_content) %>
   

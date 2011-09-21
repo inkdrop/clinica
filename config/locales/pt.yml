@@ -4,6 +4,7 @@ pt:
   edit_subject: Editar Tema
   new_news: Nova Notícia
   edit_topic: Editar Tópico
+  new_topic: Novo Tópico
   devise:
     sessions:
       user:

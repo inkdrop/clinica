@@ -19,6 +19,8 @@
 
     <%= javascript_include_tag 'jquery-1.6.4.js' %>    
     <%= javascript_include_tag 'bootstrap/bootstrap-dropdown.js' %>
+    <%= javascript_include_tag 'bootstrap/bootstrap-alerts.js' %>
+    <%= javascript_include_tag 'bootstrap/bootstrap-scrollspy.js' %>
     <%= javascript_include_tag :defaults %>
     
     <%= stylesheet_link_tag :all %>
@@ -29,7 +31,7 @@
   
   <body>
     
-    <div class="topbar">
+    <div class="topbar" data-scrollspy="scrollspy">
       <div class="fill">
         <div class="container">
           <a class="brand" href="/">CIPP Toledo</a>
@@ -39,15 +41,18 @@
             <li><%= link_to "III. Temas",temas_path %></li>
             <li><%= link_to "IV. Contato",contato_path %></li>
           </ul>
+          <form class="pull-left" action="">
+            <input type="text" placeholder="Pesquisar">
+          </form>
           <%= render 'devise/menu/login_items' %>
           <%= render 'devise/menu/registration_items' %>
         </div>
       </div>
     </div>
-  
+    
     <div class="container">
-      <% if notice %><p class="info"><%= notice %></p><% end %>
-      <% if alert %><p class="alert"><%= alert %></p><% end %>
+      <% if notice %><div class="alert-message success fade in out" data-alert="alert" style="margin-top:15px;"><a class="close" href="#">×</a><p><%= notice %></p></div><% end %>
+      <% if alert %><div class="alert-message warning fade in out" data-alert="alert" style="margin-top:15px;"><a class="close" href="#">×</a><p><%= alert %></p></div><% end %>
       <%= content_for?(:content) ? yield(:content) : yield %>
       
       <footer>

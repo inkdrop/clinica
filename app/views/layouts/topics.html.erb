@@ -10,13 +10,14 @@
     <%= link_to 'Voltar', subject_path(@subject) %>
   <% end %>
 
-  <ul class='pagination'>
-    <strong>Ir para:</strong>
-    <li><%= link_to "Todos", subjects_path %></li>
-    <% Subject.pagination_letters.each do |letter| %>
-      <li><%= link_to(letter, subjects_path(:letter => letter)) %></li>
-    <% end %>
-  </ul>
+  <div class="pagination">
+    <ul>
+      <li><%= link_to "Todos", subjects_path %></li>
+      <% Subject.pagination_letters.each do |letter| %>
+        <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <%= content_for(:topic_content) %>
 

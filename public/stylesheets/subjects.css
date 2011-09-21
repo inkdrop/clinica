@@ -1,4 +1,4 @@
-ul.pagination {
+/*ul.pagination {
   list-style: none;
   color: lightgray;
   padding: 1em 0.5em;
@@ -15,4 +15,4 @@ ul.pagination li {
 
 ul.pagination li:before {
   content: '| ';
-}
+}*/
