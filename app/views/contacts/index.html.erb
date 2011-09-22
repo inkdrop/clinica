@@ -1,14 +1,17 @@
-<h2>Lista de Mensagens</h2>
+<h1 class="nav_title">Lista de Mensagens</h1>
 
 <%= page_entries_info @contacts %>
-<hr/>
+<br/>
+<br/>
 <table>
-  <tr>
-    <th>Nome</th>
-    <th>Idade</th>
-    <th>Email</th>
-    <th>Opções</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Email</th>
+      <th>Opções</th>
+    </tr>
+  <thead>
   <% @contacts.each do |c| %>
     <tr>
       <td><%= c.firstName << " " << c.lastName %></td>

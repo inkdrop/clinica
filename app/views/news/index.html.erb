@@ -1,12 +1,11 @@
-<h1 class="nav_title"><%=t :news_label %></h1>
-<%= link_to 'Criar notícia', new_news_path if current_user %>
+<h1 class="nav_title"><%=t :news_label %><% if current_user %><small> [<%= link_to 'criar notícia', new_news_path %>]</small><% end %></h1>
 
 <%= page_entries_info @news %>
 <br/>
 <br/>
 <% @news.each do |n| %>
   <div class="list_article">
-    <div class="title"><%= link_to n.title, news_path(n) %></div>
+    <div class="title"><%= link_to n.title, news_path(n) %><% if current_user %><small> [<%= link_to 'editar', edit_news_path(n) %>]</small><% end %></div>
     <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
     <%= n.content.html_safe %>
   </div>
