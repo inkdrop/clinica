@@ -1,14 +1,15 @@
+<h1 class="nav_title"><%=t :news_label %></h1>
 <%= link_to 'Criar notícia', new_news_path if current_user %>
-<br/>
+
 <%= page_entries_info @news %>
-<hr/>
+<br/>
+<br/>
 <% @news.each do |n| %>
-  <div>
+  <div class="list_article">
     <div class="title"><%= link_to n.title, news_path(n) %></div>
     <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
     <%= n.content.html_safe %>
   </div>
-  <hr/>
 <% end %>
 
 <%= will_paginate(@news, :renderer => BootstrapLinkRenderer) %>

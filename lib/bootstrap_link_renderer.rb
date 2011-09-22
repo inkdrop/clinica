@@ -1,3 +1,4 @@
+#/lib/bootstrap_link_renderer.rb
 class BootstrapLinkRenderer < WillPaginate::ViewHelpers::LinkRenderer
 
   protected

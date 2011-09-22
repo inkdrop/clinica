@@ -3,7 +3,7 @@ class Subject < ActiveRecord::Base
   
   has_many :topics, :dependent => :destroy
   
-  paginate_alphabetically :by => :title, :show_all_letters => true
+  paginate_alphabetically :by => :title, :show_all_letters => false
   
   def to_s
     self.title

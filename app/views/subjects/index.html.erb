@@ -1,10 +1,9 @@
 <% content_for :subject_content do %>
   <% if @subjects.size > 0 %>
     <% @subjects.each do |s| %>
-      <div>
+      <div class="list_article">
         <h3 style="color:#333333"><%= link_to s.title, subject_path(s) %></h3>
       </div>
-      <hr/>
     <% end %>
   <% else %>
     <h3>Nenhum tema econtrado</h3>

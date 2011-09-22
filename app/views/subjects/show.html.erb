@@ -1,11 +1,9 @@
 <% content_for :subject_options do %>
-  |
-  <%= link_to 'Criar Tópico', new_subject_topic_path(@subject) %> |
-  <%= link_to 'Voltar', subjects_path %>
+  [<%= link_to 'criar tópico', new_subject_topic_path(@subject) %>]
 <% end %>
 
 <% content_for :subject_content do %>
-  <h2><%= @subject.title %> <small>[<%= link_to 'editar', edit_subject_path(@subject) %>]</small> </h2>
+  <h2><%= @subject.title %><% if current_user %><small> [<%= link_to 'editar', edit_subject_path(@subject) %>]</small><% end %></h2>
   <div class="tfooter"><%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %></div>
 
   <p>

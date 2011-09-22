@@ -5,6 +5,8 @@ pt:
   new_news: Nova Notícia
   edit_topic: Editar Tópico
   new_topic: Novo Tópico
+  news_label: Notícias
+  subjects_label: Temas
   devise:
     sessions:
       user:

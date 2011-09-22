@@ -8,5 +8,7 @@ en:
   new_news: Create News
   edit_topic: Edit Topic
   new_topic: New Topic
+  news_label: News Articles
+  subjects_label: Subjects Articles
   #Atributos dos models
   
