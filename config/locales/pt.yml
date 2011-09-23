@@ -20,6 +20,10 @@ pt:
         title: Título
         description: Descrição
         content: Conteúdo
+      news: 
+        title: Título
+        content: Conteúdo
+        picture: Imagem
       contact:
         firstName: Nome
         lastName: Sobrenome

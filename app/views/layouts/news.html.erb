@@ -1,0 +1,14 @@
+<% content_for :content do %>
+  
+  <div class="row">
+    <div class="span11">
+      <%= content_for(:news_content) %>
+    </div>
+    
+    <div class="span5 related_sidebar">
+      <%= render "news_sidebar" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render :file => 'layouts/application' %>

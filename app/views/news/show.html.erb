@@ -1,7 +1,10 @@
+<% content_for :news_content do %>
+<h1 class="nav_title"><%= @news.title %></h1>
 <ul class="tmenu">
-  <li class="title"><%= @news.title %></li>
-  <li><% if current_user %>[<%= link_to 'editar', edit_news_path(@news) %>]<% end %></li>
+  <li class="title"></li>
+  <li></li>
 </ul>
 <div class="tfooter"><%= @news.created_at.strftime("%e %B, %Y %H:%M") %> | <%= @news.user %></div>
-<hr/>
 <%= @news.content.html_safe %>
+<%= link_to 'Editar', edit_news_path(@news), :class => 'btn primary' if current_user %>
+<% end %>

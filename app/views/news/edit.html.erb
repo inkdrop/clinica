@@ -1,6 +1,9 @@
-<h1>Editing news</h1>
+<% content_for :news_content do %>
+  <h1>Editing news</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @news %> |
-<%= link_to 'Back', news_index_path %>
+  <%= link_to 'Show', @news %> |
+  <%= link_to 'Back', news_index_path %>
+<% end %>
+
