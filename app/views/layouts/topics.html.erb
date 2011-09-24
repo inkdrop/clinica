@@ -1,13 +1,11 @@
 <%= content_for :content do %>
-
-  <%= stylesheet_link_tag 'subjects', :media => 'screen' %>
-
+  
+  <h1 class="nav_title"><%=t :subjects_label %></h1>
+  
   <% if current_user %>
-    <%= link_to 'Criar tema', new_subject_path %> |
-    <%= link_to 'Editar Tema', edit_subject_path(@subject) %> |
-    <%= link_to 'Criar Tópico', new_subject_topic_path(@subject) %> |
+    <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' %> 
+    <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn' %>
     <%= content_for :topic_options do %><% end %>
-    <%= link_to 'Voltar', subject_path(@subject) %>
   <% end %>
 
   <div class="pagination">

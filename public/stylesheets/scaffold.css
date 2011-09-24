@@ -80,8 +80,11 @@ ul.tmenu li {
 }
 
 .title {font-size:1.6em;color: #3C3C3C;}
-.list_article {border-bottom:1px dotted #CCCCCC;margin-bottom:20px;}
+.list_article {border-bottom:1px dotted #CCCCCC;margin-bottom:20px;padding-bottom:5px;}
 .nav_title {margin-top:0;background:url("/images/border-2px.gif") repeat-x scroll left bottom transparent;border-bottom:1px solid rgba(255, 255, 255, 0.898);}
 .related_sidebar {/*border-left:1px dotted #CCCCCC;*/}
 .related_sidebar h6 {background:url("/images/border-2px.gif") repeat-x scroll left bottom transparent;border-bottom:1px solid rgba(255, 255, 255, 0.898);margin-bottom:18px;}
 .label a {color:#FFFFFF;}
+.action_button {margin-bottom:18px;}
+.pages_helper {margin-bottom:18px;}
+.article_pic {float:left;margin-right:10px;}

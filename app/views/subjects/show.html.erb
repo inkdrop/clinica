@@ -1,14 +1,12 @@
 <% content_for :subject_options do %>
-  [<%= link_to 'criar tópico', new_subject_topic_path(@subject) %>]
+  <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn' if current_user %>
 <% end %>
 
 <% content_for :subject_content do %>
   <h2><%= @subject.title %><% if current_user %><small> [<%= link_to 'editar', edit_subject_path(@subject) %>]</small><% end %></h2>
   <div class="tfooter"><%= @subject.created_at.strftime("%e %B, %Y") %> | <%= @subject.user %></div>
 
-  <p>
-    <%= @subject.content.html_safe %>
-  </p>
+  <p><%= @subject.content.html_safe %></p>
   
   <% if @subject.topics.size > 0 %>
     <%= render :partial => "topics/topic_partial", :collection => @subject.topics, :as => :topic %>

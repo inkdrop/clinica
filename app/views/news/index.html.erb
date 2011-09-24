@@ -1,29 +1,22 @@
 <% content_for :news_content do %>
-  <h1 class="nav_title"><%=t :news_label %></h1>
-
-  <%= page_entries_info @news %>
-  <br/>
-  <br/>
+  
+  <div class="pages_helper"><%= page_entries_info @news %></div>
+  
   <% @news.each do |n| %>
     <div class="list_article">
-      <div class="row">
-        <div class="span4">
           <% if n.photo? %>
+            <div class="article_pic">
             <ul class="media-grid">
               <li><a href="#"><%= image_tag n.photo.url(:medium) %></a></li>
             </ul>
+            </div>
           <% end %>
-        </div>
-        <div class="span7">
           <div class="title"><%= link_to n.title, news_path(n) %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_news_path(n) %>]</small><% end %></div>
           <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
           <%= n.content.html_safe %>
-        </div>
-      </div>
     </div>
   <% end %>
   
   <%= will_paginate(@news, :renderer => BootstrapLinkRenderer) %>
   
-  <%= link_to 'Criar notícia', new_news_path, :class => 'btn primary' if current_user %>
 <% end %>

@@ -1,9 +1,7 @@
 <% content_for :content do %>
-  <h1 class="nav_title"><%=t :subjects_label %><% if current_user %><small> [<%= link_to 'criar tema', new_subject_path %>] <%= content_for :subject_options do %><% end %></small><% end %></h1>
+  <h1 class="nav_title"><%=t :subjects_label %></h1>
   
-  <% if current_user %>
-    <%= content_for :subject_options do %><% end %>
-  <% end %>
+  <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' if current_user %><%= content_for :subject_options do %><% end %>
 
   <div class="pagination">
     <ul>

@@ -1,10 +1,12 @@
 <% content_for :news_content do %>
-<h1 class="nav_title"><%= @news.title %></h1>
-<ul class="tmenu">
-  <li class="title"></li>
-  <li></li>
-</ul>
-<div class="tfooter"><%= @news.created_at.strftime("%e %B, %Y %H:%M") %> | <%= @news.user %></div>
-<%= @news.content.html_safe %>
-<%= link_to 'Editar', edit_news_path(@news), :class => 'btn primary' if current_user %>
+
+  <h2><%= @news.title %><% if current_user %> <small>[<%= link_to 'editar', edit_news_path(@news) %>]</small><% end %></h2>
+  <div class="tfooter"><%= @news.created_at.strftime("%e %B, %Y %H:%M") %> | <%= @news.user %></div>
+  
+  <% if @news.photo? %>
+    <div class="article_pic"><ul class="media-grid"><li><a href=""><%= image_tag @news.photo.url(:large) %></a></li></ul></div>
+  <% end %>
+  
+  <p><%= @news.content.html_safe %></p>
+
 <% end %>

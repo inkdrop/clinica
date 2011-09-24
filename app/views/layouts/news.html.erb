@@ -2,6 +2,8 @@
   
   <div class="row">
     <div class="span11">
+      <h1 class="nav_title"><%=t :news_label %></h1>
+      <%= link_to 'Criar notícia', new_news_path, :class => 'btn primary action_button' if current_user %>
       <%= content_for(:news_content) %>
     </div>
     
