@@ -1,19 +1,27 @@
 <% content_for :content do %>
-  <h1 class="nav_title"><%=t :subjects_label %></h1>
-  
-  <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' if current_user %><%= content_for :subject_options do %><% end %>
 
-  <div class="pagination">
-    <ul>
-      <li><%= link_to "Todos", temas_path %></li>
-      <% Subject.pagination_letters.each do |letter| %>
-        <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
-      <% end %>
-    </ul>
-  </div>
+  <div class="row">
+    <div class="span11">
+      <h1 class="nav_title"><%=t :subjects_label %></h1>
+      <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' if current_user %>
+      <%= content_for :subject_options do %><% end %>
+      
+      <div class="pagination">
+        <ul>
+          <li id="letter_todos"><%= link_to "Todos", temas_path %></li>
+          <% Subject.pagination_letters.each do |letter| %>
+            <li id="letter_<%= letter %>"><%= link_to(letter, temas_path(:letter => letter)) %></li>
+          <% end %>
+        </ul>
+      </div>
 
-  <%= content_for(:subject_content) %>
-  
+      <%= content_for(:subject_content) %>
+    </div>
+    
+    <div class="span5 related_sidebar">
+      <%= render "subjects_sidebar" %>
+    </div>
+  </div>    
 <% end %>
 
 <%= render :file => 'layouts/application' %>

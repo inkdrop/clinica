@@ -4,16 +4,14 @@
   
   <% @news.each do |n| %>
     <div class="list_article">
-          <% if n.photo? %>
-            <div class="article_pic">
-            <ul class="media-grid">
-              <li><a href="#"><%= image_tag n.photo.url(:medium) %></a></li>
-            </ul>
-            </div>
-          <% end %>
-          <div class="title"><%= link_to n.title, news_path(n) %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_news_path(n) %>]</small><% end %></div>
-          <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
-          <%= n.content.html_safe %>
+      <% if n.photo? %>
+        <div class="article_pic">
+          <ul class="media-grid"><li><a href="<%= news_path(n) %>"><%= image_tag n.photo.url(:medium) %></a></li></ul>
+        </div>
+      <% end %>
+      <div class="title"><%= link_to n.title, news_path(n) %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_news_path(n) %>]</small><% end %></div>
+      <div class="tfooter"><%= n.created_at.strftime("%e %B, %Y %H:%M") %> | <%= n.user %></div>
+      <%= sanitize(truncate(n.content, :length => 390, :separator => ' ')) %>
     </div>
   <% end %>
   

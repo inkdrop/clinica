@@ -1,11 +1,19 @@
 <% content_for :subject_content do %>
+  
+  <% if params[:letter] == nil %><div class="pages_helper"><%= page_entries_info @subjects %></div><% end %>
+
   <% if @subjects.size > 0 %>
     <% @subjects.each do |s| %>
       <div class="list_article">
-        <h3 style="color:#333333"><%= link_to s.title, subject_path(s) %></h3>
+        <div class="title"><%= link_to s.title, subject_path(s) %></div>
+        <div class="tfooter"><%= s.created_at.strftime("%e %B, %Y %H:%M") %> | <%= s.user %></div>
+        <%= sanitize(truncate(s.content, :length => 390, :separator => ' ')) %>
       </div>
     <% end %>
   <% else %>
     <h3>Nenhum tema econtrado</h3>
   <% end %>  
+  
+  <%= will_paginate(@news, :renderer => BootstrapLinkRenderer) if params[:letter] == nil %>
+  
 <% end %>  

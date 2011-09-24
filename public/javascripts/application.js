@@ -1,5 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+
+//Verifica a URL atual e seleciona o item do menu de navegacao correspondente ao local que o usuario se encontra
 function syncNav() {
   var pathname;
   pathname = window.location.pathname;
@@ -12,4 +14,13 @@ function syncNav() {
     $('#nav-contato').addClass('active');
   else 
     $('#nav-inicio').addClass('active');
+}
+
+//Verifica a URL atual e seleciona o item do menu de paginacao por letra correspondente ao local que o usuario se encontra
+function syncLetterPagination() {
+  var pathname;
+  pathname = window.location.pathname;
+  
+  if (pathname.indexOf('letter=') != -1)
+    null;
 }

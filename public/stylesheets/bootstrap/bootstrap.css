@@ -1709,7 +1709,8 @@ a.menu:after, .dropdown-toggle:after {
 footer {
   margin-top: 17px;
   padding-top: 17px;
-  border-top: 1px solid #DDDDDD;
+  background:url("/images/border-2px.gif") repeat-x scroll left top transparent;
+  border-top:1px solid rgba(255, 255, 255, 0.898);
 }
 .page-header {
   margin-bottom: 17px;
