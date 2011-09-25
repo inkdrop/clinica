@@ -14,6 +14,8 @@
           <% end %>
         </ul>
       </div>
+      
+      <script>syncLetterPagination('<%= params[:letter] %>');</script>
 
       <%= content_for(:subject_content) %>
     </div>

@@ -80,6 +80,7 @@ ul.tmenu li {
 }
 
 .title {font-size:1.6em;color: #3C3C3C;}
+.title small {color:#BFBFBF;}
 .list_article {border-bottom:1px dotted #CCCCCC;margin-bottom:20px;padding-bottom:5px;}
 .nav_title {margin-top:0;background:url("/images/border-2px.gif") repeat-x scroll left bottom transparent;border-bottom:1px solid rgba(255, 255, 255, 0.898);}
 .related_sidebar {/*border-left:1px dotted #CCCCCC;*/}

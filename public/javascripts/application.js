@@ -16,11 +16,12 @@ function syncNav() {
     $('#nav-inicio').addClass('active');
 }
 
-//Verifica a URL atual e seleciona o item do menu de paginacao por letra correspondente ao local que o usuario se encontra
-function syncLetterPagination() {
-  var pathname;
-  pathname = window.location.pathname;
+//Verifica a letra passada por parametro e seleciona o item correspondente do menu de paginacao por letra
+function syncLetterPagination(letter) {
   
-  if (pathname.indexOf('letter=') != -1)
-    null;
+  if (letter != '') {
+    $('#letter_'.concat(letter)).addClass('active');
+  }
+  else
+    $('#letter_todos').addClass('active');
 }

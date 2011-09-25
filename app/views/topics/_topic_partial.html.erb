@@ -1,4 +1,6 @@
-<h2 class="topic-header"><%= link_to topic.title, subject_topic_path(topic.subject, topic) %> 
+<hr/>
+<div class="title"><%= link_to topic.title, subject_topic_path(topic.subject, topic) %> 
   <% if current_user %><small>[<%= link_to 'editar', edit_subject_topic_path(@subject, topic) %>]</small><% end %>
-</h2>
+</div>
+<div class="tfooter"><%= topic.created_at.strftime("%e %B, %Y %H:%M") %> | <%= topic.user %></div>
 <%= topic.content.html_safe %>
