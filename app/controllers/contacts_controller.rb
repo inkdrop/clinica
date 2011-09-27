@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
   
   def create
     @contact = Contact.new(params[:contact])
-    if @contact.save
+    if verify_recaptcha(:message => "O codigo Captcha informado e invalido") && @contact.save
       redirect_to(contato_path, :notice => 'Mensagem enviada com sucesso.')
     else
       redirect_to(contato_path, :notice => 'Nao foi possivel enviar sua mensagem, tente mais tarde.')

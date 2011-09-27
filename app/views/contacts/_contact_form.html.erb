@@ -1,49 +1,34 @@
-<fieldset class="span-10">
-  <legend>Fale conosco</legend>
-  <%= form_for(@contact) do |f| %>
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being saved:</h2>
+<h1 class="nav_title"><%=t :talk_to_us %></h1>
 
-        <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-    <div class="field">
-      <%= f.label :firstName %><br />
-      <%= f.text_field :firstName %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :lastName %><br />
-      <%= f.text_field :lastName %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :age %><br />
-      <%= f.text_field :age %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :message %><br />
-      <%= f.text_area :message %>
-    </div>
-    
-    <%= f.hidden_field :read, :value => false %>
-    
-    <ul><li>Incluir um Captcha aqui!</li></ul>
-
-    <div class="actions">
-      <%= f.submit %>
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-</fieldset>
+
+  <%= f.text_field :firstName, :placeholder => "Nome*" %>
+
+  <%= f.text_field :lastName, :placeholder => "Sobrenome*", :class => "pull-right" %>
+
+  <%= f.text_field :email, :placeholder => "Email*" %>
+
+  <%= f.text_field :age,:placeholder => "Idade*", :class => "pull-right" %>
+
+  <!--<%= f.label :message %>-->
+  <%= f.text_area :message, :placeholder => "Mensagem*", :class => "span8" %>
+  
+  <%= f.hidden_field :read, :value => false %>
+  
+  <%= recaptcha_tags %>
+
+  <hr/>
+
+  <div><%= f.submit :class => "btn primary", :value => "Enviar" %></div>
+<% end %>

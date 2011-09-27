@@ -7,6 +7,8 @@ pt:
   new_topic: Novo Tópico
   news_label: Notícias
   subjects_label: Temas
+  visit_us: Venha nos visitar
+  talk_to_us: Fale conosco
   devise:
     sessions:
       user:

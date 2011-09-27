@@ -622,6 +622,7 @@ label {
   width: 130px;
   text-align: right;
   color: #404040;
+  margin-right: 5px;
 }
 form .input {
   margin-left: 150px;
@@ -644,6 +645,7 @@ select,
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  margin-bottom: 5px;
 }
 /* mini reset for non-html5 file types */
 input[type=checkbox], input[type=radio] {

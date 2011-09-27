@@ -26,6 +26,8 @@
     <%= csrf_meta_tag %>
     <%= include_tiny_mce_if_needed %>
     
+    <%= yield :head %>
+    
   </head>
   
   <body>
