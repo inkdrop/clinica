@@ -1,8 +1,4 @@
-body { background-color: #fff; color: #333;background: url("../images/main-bg-whiteish.jpg") repeat scroll center top transparent;padding-top: 70px; }
-
-small {
-  font-size: 11px;
-}
+body {background-color: #fff; color: #333;background: url("../images/main-bg-whiteish.jpg") repeat scroll center top transparent;padding-top: 70px;}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -23,11 +19,7 @@ a:hover { color: #4183C4; text-decoration: underline; }
 div.field, div.actions {
   margin-bottom: 10px;
 }
-
-#notice {
-  color: green;
-}
-
+/*
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -53,21 +45,13 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
+*/
 
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
+#error_explanation ul {margin-bottom:0;}
+#error_explanation ul li {color: #FFFFFF;font-size: 12px;}
 
-ul.tmenu {
-  list-style: none;	
-  margin: 10px 0 0;
-  padding: 0;
-}
-
-ul.tmenu li {
-  display: inline;  
-}
+ul.tmenu {list-style: none;margin: 10px 0 0;padding: 0;}
+ul.tmenu li {display: inline;}
 
 .tfooter {
   font-size: 0.8em;

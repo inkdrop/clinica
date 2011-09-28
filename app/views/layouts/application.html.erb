@@ -54,8 +54,8 @@
     <script>syncNav();</script>
     
     <div class="container">
-      <% if notice %><div class="alert-message success fade in out" data-alert="alert" style="margin-top:15px;"><a class="close" href="#">×</a><p><%= notice %></p></div><% end %>
-      <% if alert %><div class="alert-message warning fade in out" data-alert="alert" style="margin-top:15px;"><a class="close" href="#">×</a><p><%= alert %></p></div><% end %>
+      <% if notice %><div class="alert-message success fade in out" data-alert="alert"><a class="close" href="#">×</a><p><%= notice %></p></div><% end %>
+      <% if alert %><div class="alert-message warning fade in out" data-alert="alert"><a class="close" href="#">×</a><p><%= alert %></p></div><% end %>
       <%= content_for?(:content) ? yield(:content) : yield %>
       
       <footer>

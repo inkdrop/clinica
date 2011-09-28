@@ -1,5 +1,6 @@
 Clinica::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :skip => :registrations
+  resources :users, :only => [:edit, :update]
 
   resources :news
 
@@ -11,6 +12,7 @@ Clinica::Application.routes.draw do
   match "contato" => "contacts#new"
   match "noticias" => "news#index"
   match "temas" => "subjects#index"
+  match "users/edit" => "users#edit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

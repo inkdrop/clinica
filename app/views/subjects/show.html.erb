@@ -11,7 +11,7 @@
   <% if @subject.topics.size > 0 %>
     <%= render :partial => "topics/topic_partial", :collection => @subject.topics, :as => :topic %>
   <% else %>
-    <span class="alert-message warning"><strong>Atenção!</strong> Nenhum tópico relacionado a este tema. Para criar um clique <%= link_to 'aqui', new_subject_topic_path(@subject) %>.</span>
+    <span class="alert-message warning"><strong>Atenção!</strong> Nenhum tópico relacionado a este tema.<% if current_user %> Para criar um clique <%= link_to 'aqui', new_subject_topic_path(@subject) %>.<% end %></span>
   <% end %>
   
 

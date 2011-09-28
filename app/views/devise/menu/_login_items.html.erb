@@ -2,10 +2,10 @@
   <ul class="nav secondary-nav">
     <li class="dropdown" data-dropdown="dropdown"><a class="dropdown-toggle" href="#"><%= current_user.name %></a>
       <ul class="dropdown-menu">
-        <li><%= link_to 'Caixa de Entrada', contacts_path %></li>
-        <li><%= link_to('Edit registration', edit_user_registration_path) %></li>
+        <li><%= link_to 'Caixa de entrada', contacts_path %></li>
+        <li><%= link_to 'Atualizar dados', users_edit_path %></li>
         <li class="divider"></li>
-        <li><%= link_to 'Logout', destroy_user_session_path %></li>
+        <li><%= link_to 'Sair', destroy_user_session_path %></li>
       </ul>
     </li>
   </ul>
