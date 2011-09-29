@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :subjects
   has_many :topics
   
+  validates :name, :presence => true, :length => {:minimum => 2, :maximum => 255}
+  validates :password_confirmation, :presence => true
+  
   def to_s
     self.name
   end
