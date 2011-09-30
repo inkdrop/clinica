@@ -17,6 +17,9 @@ class News < ActiveRecord::Base
                                             
   validates_attachment_size :photo, :less_than => 300.kilobytes,
                                     :message => ": o arquivo deve ser menor que 300kb."
+
+  validates :title, :content, :presence => true
+  validates :content, :length => {:minimum => 6, :maximum => 255}
   
   def to_s
     self.title

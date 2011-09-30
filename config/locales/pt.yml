@@ -9,6 +9,8 @@ pt:
   subjects_label: Temas
   visit_us: Venha nos visitar
   talk_to_us: Fale conosco
+  personal_data: Dados pessoais
+  settings: Configurações
   devise:
     sessions:
       user:

@@ -1,7 +1,7 @@
 <%= form_for(@news, :html => { :multipart => true }) do |f| %>
   <% if @news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
+    <div id="error_explanation" class="alert-message error">
+      <%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:
 
       <ul>
       <% @news.errors.full_messages.each do |msg| %>
@@ -11,20 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="clearfix<% if @news.errors[:title].any? %> error<% end %>">
+    <div class="input">
+      <%= f.text_field :title, :placeholder => "Título*", :class => "span6" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :class => "mceEditor" %>
+  
+  <div class="clearfix<% if @news.errors[:content].any? %> error<% end %>">
+    <%= f.label :content %>
+    <div class="input">
+      <%= f.text_area :content, :class => "mceEditor span6" %>
+    </div>  
   </div>
-  <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :photo %>
+  
+  <div class="clearfix<% if @news.errors[:picture].any? %> error<% end %>">
+    <%= f.label :picture %>
+    <div class="input">
+      <%= f.file_field :photo %>
+    </div>  
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn primary", :value => "Salvar" %>
   </div>
 <% end %>
