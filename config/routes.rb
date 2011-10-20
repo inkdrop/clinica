@@ -1,8 +1,11 @@
 Clinica::Application.routes.draw do
+  resources :questions
+
   devise_for :users, :skip => :registrations
   resources :users, :only => [:edit, :update]
 
-  resources :news
+  #resources :news
+  resources :questions
 
   resources :subjects do
     resources :topics
@@ -10,7 +13,8 @@ Clinica::Application.routes.draw do
   
   resources :contacts
   match "contato" => "contacts#new"
-  match "noticias" => "news#index"
+  #match "noticias" => "news#index"
+  match "perguntas" => "questions#index"
   match "temas" => "subjects#index"
   match "users/edit" => "users#edit"
 

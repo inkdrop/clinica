@@ -6,8 +6,8 @@ function syncNav() {
   var pathname;
   pathname = window.location.pathname;
   
-  if (pathname.indexOf('noticias') != -1 || pathname.indexOf('news') != -1) 
-    $('#nav-noticias').addClass('active');
+  if (pathname.indexOf('perguntas') != -1 || pathname.indexOf('questions') != -1) 
+    $('#nav-perguntas').addClass('active');
   else if (pathname.indexOf('temas') != -1 || pathname.indexOf('subjects') != -1) 
     $('#nav-temas').addClass('active');
   else if (pathname.indexOf('contato') != -1 || pathname.indexOf('contacts') != -1) 

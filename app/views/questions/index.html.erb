@@ -1,0 +1,11 @@
+<% content_for :questions_content do %>
+
+  <% @questions.each do |question| %>
+    <%= question.question %>
+    <%= question.answer %>
+    <%= link_to 'Exibir', question %>
+    <%= link_to 'Editar', edit_question_path(question) if current_user %>
+    <%= link_to 'Excluir', question, :confirm => 'Tem certeza?', :method => :delete if current_user %>
+  <% end %>
+
+<% end %>
