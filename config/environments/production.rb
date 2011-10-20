@@ -46,4 +46,6 @@ Clinica::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lc0SckSAAAAANTapVxq-QyNh9iYhxM0RhEk96TX'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lc0SckSAAAAANw7PTq_Dow2YphEAeUHUvAo8QSf'
 end
