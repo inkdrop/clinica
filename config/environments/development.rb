@@ -23,7 +23,9 @@ Clinica::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
   
-  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LcciMgSAAAAAK1QbpgOyShNESa_iNEfwsyw4oHu'
-  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LcciMgSAAAAADPcJQjIOKRRNSUx0mWMF-F7Hbrz'
+  #ENV['RECAPTCHA_PUBLIC_KEY'] = '6LcciMgSAAAAAK1QbpgOyShNESa_iNEfwsyw4oHu'
+  #ENV['RECAPTCHA_PRIVATE_KEY'] = '6LcciMgSAAAAADPcJQjIOKRRNSUx0mWMF-F7Hbrz'
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lc0SckSAAAAANTapVxq-QyNh9iYhxM0RhEk96TX'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lc0SckSAAAAANw7PTq_Dow2YphEAeUHUvAo8QSf'
 end
 
