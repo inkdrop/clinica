@@ -3,13 +3,14 @@
 
 en:
   topic_update: Topic was successfuly updated.
-  new_subject: New Subject
-  edit_subject: Edit Subject
-  new_news: Create News
-  edit_topic: Edit Topic
-  new_topic: New Topic
-  news_label: News Articles
-  subjects_label: Subjects Articles
+  new_subject: New subject
+  edit_subject: Edit subject
+  new_news: Create news
+  edit_news: Editing news
+  edit_topic: Editing topic
+  new_topic: New topic
+  news_label: News articles
+  subjects_label: Subjects articles
   visit_us: Pay us a visit
   talk_to_us: Get in touch
   personal_data: Personal data

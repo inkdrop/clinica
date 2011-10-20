@@ -1,4 +1,4 @@
-<%= form_for(@news, :html => { :multipart => true }) do |f| %>
+<%= form_for(@news, :html => { :multipart => true, :class => "form-stacked" }) do |f| %>
   <% if @news.errors.any? %>
     <div id="error_explanation" class="alert-message error">
       <%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:
@@ -12,15 +12,16 @@
   <% end %>
 
   <div class="clearfix<% if @news.errors[:title].any? %> error<% end %>">
+    <%= f.label :title %>
     <div class="input">
-      <%= f.text_field :title, :placeholder => "Título*", :class => "span6" %>
+      <%= f.text_field :title, :class => "span10" %>
     </div>
   </div>
   
   <div class="clearfix<% if @news.errors[:content].any? %> error<% end %>">
     <%= f.label :content %>
     <div class="input">
-      <%= f.text_area :content, :class => "mceEditor span6" %>
+      <%= f.text_area :content, :class => "mceEditor span10" %>
     </div>  
   </div>
   
@@ -32,6 +33,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit :class => "btn primary", :value => "Salvar" %>
+    <%= f.submit :class => "btn success", :value => "✓ Salvar" %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
-<%= form_for(@subject) do |f| %>
+<%= form_for(@subject, :html => { :class => "form-stacked" }) do |f| %>
   <% if @subject.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert-message error">
       <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
 
       <ul>
@@ -11,19 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title, :value => "Oi" %><br />
-    <%= f.text_field :title %>
+  <div class="clearfix<% if @subject.errors[:title].any? %> error<% end %>">
+    <%= f.label :title %>
+    <div class="input"><%= f.text_field :title, :class => "span6" %></div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+  
+  <div class="clearfix<% if @subject.errors[:description].any? %> error<% end %>">
+    <%= f.label :description %>
+    <div class="input"><%= f.text_field :description, :class => "span6" %></div>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :class => "mceEditor" %>
+  
+  <div class="clearfix<% if @subject.errors[:content].any? %> error<% end %>">
+    <%= f.label :content %>
+    <div class="input"><%= f.text_area :content, :class => "mceEditor span10" %></div>
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn success", :value => "✓ Salvar" %>
   </div>
 <% end %>

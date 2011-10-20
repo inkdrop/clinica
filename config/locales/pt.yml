@@ -1,10 +1,11 @@
 pt:
   topic_update: Tópico atualizado com sucesso.
-  new_subject: Novo Tema
-  edit_subject: Editar Tema
-  new_news: Nova Notícia
-  edit_topic: Editar Tópico
-  new_topic: Novo Tópico
+  new_subject: Novo tema
+  edit_subject: Editar tema
+  new_news: Nova notícia
+  edit_news: Editando notícia
+  edit_topic: Editando tópico
+  new_topic: Novo tópico
   news_label: Notícias
   subjects_label: Temas
   visit_us: Venha nos visitar

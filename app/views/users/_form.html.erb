@@ -1,5 +1,5 @@
 <h1 class="nav_title"><%=t :personal_data %></h1>
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :html => { :class => "form-stacked" }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation" class="alert-message error">
       <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
@@ -48,6 +48,6 @@
   </div>
   
   <div class="actions">
-    <%= f.submit :class => "btn primary" %>
+    <%= f.submit :class => "btn success", :value => "✓ Salvar" %>
   </div>
 <% end %>
