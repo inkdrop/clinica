@@ -34,6 +34,9 @@ pt:
         lastName: Sobrenome
         age: Idade
         message: Mensagem
+      question:
+        question: Pergunta
+        answer: Resposta
     submit:
       subject:
         create: Criar Tema

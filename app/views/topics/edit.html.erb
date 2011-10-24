@@ -1,8 +1,14 @@
+<% content_for :topic_title do %>
+  	
+  	&rarr;&nbsp;<%= link_to @subject.title, subject_path(@subject) %>
+  	
+<% end %>
+
+
 <% content_for :topic_content do %>
-<h2><%=t :edit_topic %> (<%= link_to @subject.title, subject_path(@subject) %>)</h2>
 
-<%= render 'edit_form' %>
+  <h2>Editar tópico</h2>
 
-<%= link_to 'Show', subject_topic_path(@subject,@topic) %> |
-<%= link_to 'Topics', subject_topics_path(@subject) %>
+  <%= render 'edit_form' %>
+
 <% end %>

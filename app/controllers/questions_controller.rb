@@ -2,7 +2,12 @@ class QuestionsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:show, :index]
   
-  uses_tiny_mce :only => [:new, :create, :edit, :update]
+  uses_tiny_mce :only => [:new, :create, :edit, :update],:options => {
+                          :theme => 'advanced',
+                          :theme_advanced_resizing => true,
+                          :theme_advanced_resize_horizontal => false,
+                          :plugins => %w{ table fullscreen }
+                        }
 
   # GET /questions
   # GET /questions.xml

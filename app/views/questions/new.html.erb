@@ -1,5 +1,7 @@
-<h1>New question</h1>
+<% content_for :questions_content do %>
+  <fieldset>
+    <legend>Nova pergunta</legend>
+    <%= render 'form' %>
+  </fieldset>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', questions_path %>
+<% end %>

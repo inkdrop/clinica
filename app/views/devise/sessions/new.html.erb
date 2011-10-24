@@ -8,7 +8,7 @@
       <%= f.password_field :password, :placeholder => "Senha", :class => "span6" %></p>
 
       <% if devise_mapping.rememberable? -%>
-        <%= f.check_box :remember_me %> <%= f.label :remember_me, :style => "float:none;" %>
+        <%= f.check_box :remember_me %> <%= f.label :remember_me, "Lembrar-se de mim", :style => "float:none;" %>
       <% end -%>
 
       <%= f.submit "Entrar", :class => "btn primary pull-right" %>

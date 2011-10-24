@@ -17,7 +17,7 @@
       <td><%= c.firstName << " " << c.lastName %></td>
       <td><%= c.age %></td>
       <td><%= c.email %></td>
-      <td><%= link_to 'Mostrar', contact_path(c) %> | <%= link_to 'Excluir', c, :confirm => 'Tem certeza?', :method => :delete %></td>
+      <td><%= link_to 'Mostrar', contact_path(c) %> | <%= link_to 'Excluir', c, :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete %></td>
     </tr>
   <% end %>
   <tr>    

@@ -1,6 +1,8 @@
-<h1>Editing question</h1>
+<% content_for :questions_content do %>
+  <%= link_to "× Excluir pergunta", @question, :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @question.id != nil && current_user %>
+  
+  <h2>Editar pergunta</h2>
+  <hr/>
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+<% end %>

@@ -1,7 +1,17 @@
-<%= form_for([@subject,@topic]) do |f| %>
+<% content_for :topic_options do %>
+
+  <%= link_to "× Excluir tópico", subject_topic_path(@subject,@topic), :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @topic.id != nil && current_user %>
+
+<% end %>
+
+<%= content_for :topic_nav do %><% end %>
+
+<hr/>
+
+<%= form_for([@subject,@topic], :html => { :class => "form-stacked" }) do |f| %>
   <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+    <div id="error_explanation" class="alert-message error">
+      <%= pluralize(@topic.errors.count, "error") %> erro(s) encontrado(s):
 
       <ul>
       <% @topic.errors.full_messages.each do |msg| %>
@@ -11,19 +21,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="clearfix<% if @topic.errors[:title].any? %> error<% end %>">
+    <%= f.label :title, "Título" %>
+    <div class="input"><%= f.text_field :title, :class => "span9" %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+  <div class="clearfix<% if @topic.errors[:description].any? %> error<% end %>">
+    <%= f.label :description, "Descrição" %>
+    <div class="input"><%= f.text_field :description, :class => "span9" %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :class => "mceEditor" %>
+  <div class="clearfix<% if @topic.errors[:content].any? %> error<% end %>">
+    <%= f.label :content, "Conteúdo" %>
+    <div class="input"><%= f.text_area :content, :class => "mceEditor span9" %></div>
   </div>
   
   <div class="actions">

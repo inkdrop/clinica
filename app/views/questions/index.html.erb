@@ -1,11 +1,13 @@
 <% content_for :questions_content do %>
 
-  <% @questions.each do |question| %>
-    <%= question.question %>
-    <%= question.answer %>
-    <%= link_to 'Exibir', question %>
-    <%= link_to 'Editar', edit_question_path(question) if current_user %>
-    <%= link_to 'Excluir', question, :confirm => 'Tem certeza?', :method => :delete if current_user %>
+  <% if @questions.size > 0 %>
+    <ol>
+      <% @questions.each do |question| %>
+        <li><%= link_to question.question, question_path(question) %><% if current_user %>&nbsp;[<%= link_to 'editar', edit_question_path(question) %>]<% end %></li>
+      <% end %>
+    </ol>
+  <% else %>
+    <div class="alert-message warning"><strong>Atenção!</strong>&nbsp;Nenhum registro encontrado.</div>
   <% end %>
 
 <% end %>

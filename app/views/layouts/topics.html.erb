@@ -1,21 +1,22 @@
 <%= content_for :content do %>
   
-  <h1 class="nav_title"><%=t :subjects_label %></h1>
+  <h1 class="nav_title"><%=t :subjects_label %><%= content_for :topic_title do %><% end %></h1>
   
   <% if current_user %>
-    <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' %> 
-    <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn' %>
+    <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary action_button' %>
     <%= content_for :topic_options do %><% end %>
   <% end %>
 
-  <div class="pagination">
-    <ul>
-      <li><%= link_to "Todos", subjects_path %></li>
-      <% Subject.pagination_letters.each do |letter| %>
-        <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
-      <% end %>
-    </ul>
-  </div>
+  <%= content_for :topic_nav do %>
+    <div class="pagination">
+      <ul>
+        <li><%= link_to "Todos", subjects_path %></li>
+        <% Subject.pagination_letters.each do |letter| %>
+          <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%= content_for(:topic_content) %>
 
