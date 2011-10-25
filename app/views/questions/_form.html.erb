@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="clearfix<% if @question.errors[:question].any? %> error<% end %>">
-    <%= f.label :question %>
-    <div class="input"><%= f.text_field :question, :class => "span9" %></div>
+    <%= f.label :question, "Pergunta" %>
+    <div class="input"><%= f.text_field :question, :class => "span10" %></div>
   </div>
   
   <div class="clearfix<% if @question.errors[:answer].any? %> error<% end %>">
     <%= f.label :answer, "Resposta" %>
-    <div class="input"><%= f.text_area :answer, :class => "mceEditor span9" %></div>
+    <div class="input"><%= f.text_area :answer, :class => "mceEditor span10" %></div>
   </div>
   
   <div class="actions">

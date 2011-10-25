@@ -4,6 +4,7 @@
     <div class="span11">
       <h1 class="nav_title">Perguntas</h1>
       <%= link_to 'Nova pergunta', new_question_path, :class => 'btn primary action_button' if current_user %>
+      <%= content_for :questions_options do %><% end %>
       <%= content_for(:questions_content) %>
     </div>
     

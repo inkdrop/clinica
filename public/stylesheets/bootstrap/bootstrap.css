@@ -14,7 +14,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  /*height: 100%;*/
 }
 h1,
 h2,
@@ -183,6 +182,8 @@ textarea {
  * ------------------------------------------------------------------------------------------- */
 html, body {
   background-color: #ffffff;
+  background: url("../../images/main-bg-whiteish.jpg") repeat scroll center top transparent;
+  padding-top: 40px;
 }
 body {
   margin: 0;
@@ -191,6 +192,7 @@ body {
   font-weight: normal;
   line-height: 18px;
   color: #404040;
+  height: 100%;
 }
 .container {
   width: 940px;

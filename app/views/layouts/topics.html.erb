@@ -1,24 +1,32 @@
 <%= content_for :content do %>
   
-  <h1 class="nav_title"><%=t :subjects_label %><%= content_for :topic_title do %><% end %></h1>
+  <div class="row">
+    <div class="span11">
   
-  <% if current_user %>
-    <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary action_button' %>
-    <%= content_for :topic_options do %><% end %>
-  <% end %>
+      <h1 class="nav_title"><%=t :subjects_label %><%= content_for :topic_title do %><% end %></h1>
+      
+      <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary action_button' if current_user %>
+      <%= content_for :topic_options do %><% end %>
 
-  <%= content_for :topic_nav do %>
-    <div class="pagination">
-      <ul>
-        <li><%= link_to "Todos", subjects_path %></li>
-        <% Subject.pagination_letters.each do |letter| %>
-          <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
-        <% end %>
-      </ul>
+      <%= content_for :topic_nav do %>
+        <div class="pagination">
+          <ul>
+            <li><%= link_to "Todos", subjects_path %></li>
+            <% Subject.pagination_letters.each do |letter| %>
+              <li><%= link_to(letter, temas_path(:letter => letter)) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= content_for(:topic_content) %>
     </div>
-  <% end %>
-
-  <%= content_for(:topic_content) %>
+    
+    <div class="span5 related_sidebar">
+      <%= render "topics_sidebar" %>
+    </div>
+    
+  </div>
 
 <% end %>
 

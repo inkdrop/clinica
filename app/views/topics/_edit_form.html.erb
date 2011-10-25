@@ -1,12 +1,13 @@
 <% content_for :topic_options do %>
 
   <%= link_to "× Excluir tópico", subject_topic_path(@subject,@topic), :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @topic.id != nil && current_user %>
+  <%= link_to '← Voltar', subject_path(@subject), :class => "btn" %>
 
 <% end %>
 
 <%= content_for :topic_nav do %><% end %>
 
-<hr/>
+<hr style="margin-top:0;"/>
 
 <%= form_for([@subject,@topic], :html => { :class => "form-stacked" }) do |f| %>
   <% if @topic.errors.any? %>
@@ -23,20 +24,20 @@
 
   <div class="clearfix<% if @topic.errors[:title].any? %> error<% end %>">
     <%= f.label :title, "Título" %>
-    <div class="input"><%= f.text_field :title, :class => "span9" %></div>
+    <div class="input"><%= f.text_field :title, :class => "span10" %></div>
   </div>
 
   <div class="clearfix<% if @topic.errors[:description].any? %> error<% end %>">
     <%= f.label :description, "Descrição" %>
-    <div class="input"><%= f.text_field :description, :class => "span9" %></div>
+    <div class="input"><%= f.text_field :description, :class => "span10" %></div>
   </div>
 
   <div class="clearfix<% if @topic.errors[:content].any? %> error<% end %>">
     <%= f.label :content, "Conteúdo" %>
-    <div class="input"><%= f.text_area :content, :class => "mceEditor span9" %></div>
+    <div class="input"><%= f.text_area :content, :class => "mceEditor span10" %></div>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn success", :value => "✓ Salvar" %>
   </div>
 <% end %>

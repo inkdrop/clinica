@@ -1,15 +1,28 @@
-<% content_for :topic_options do %>
-
+<% content_for :head do %>
+  <script>
+    var disqus_developer = 1; // this would set it to developer mode
+  </script>
 <% end %>
+
+
+<%= content_for :topic_title do %>
+  <small><%= @subject.title %></small>
+<% end %>
+
+
+<% content_for :topic_options do %>
+  <%= link_to '← Voltar', subject_path(@subject), :class => "btn" %>
+<% end %>
+
+
 <% content_for :topic_content do %>
   <h2>
-    <%= @subject.title %>
-    <% if current_user %><small>[<%= link_to 'editar', edit_subject_path(@subject) %>]<% end %></small> &rarr; 
     <%= @topic.title %>
     <% if current_user %><small>[<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]</small><% end %>
   </h2>
   
   <div class="tfooter"><%= @topic.created_at.strftime("%e %B, %Y") %> | <%= @topic.user %></div>
+  
   <p>
     <%= @topic.description %>
   </p>
@@ -17,5 +30,22 @@
   <p>
     <%= @topic.content.html_safe %>
   </p>
+  
+  <hr/>
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'cipptoledo'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Favor habilitar o JavaScript para visualizar <a href="http://disqus.com/?ref_noscript">comentários do Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">Comentários by <span class="logo-disqus">Disqus</span></a>
 
 <% end %>

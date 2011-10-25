@@ -1,7 +1,7 @@
-<%= form_for([@subject,@subject.topics.build]) do |f| %>
+<%= form_for([@subject,@subject.topics.build], :html => { :class => "form-stacked" }) do |f| %>
   <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+    <div id="error_explanation" class="alert-message error">
+      <%= pluralize(@topic.errors.count, "error") %> erro(s) encontrado(s):
 
       <ul>
       <% @topic.errors.full_messages.each do |msg| %>
@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="clearfix<% if @topic.errors[:title].any? %> error<% end %>">
+    <%= f.label :title, "Título" %>
+    <div class="input"><%= f.text_field :title, :class => "span10" %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+  <div class="clearfix<% if @topic.errors[:description].any? %> error<% end %>">
+    <%= f.label :description, "Descrição" %>
+    <div class="input"><%= f.text_field :description, :class => "span10" %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :class => "mceEditor" %>
+  <div class="clearfix<% if @topic.errors[:content].any? %> error<% end %>">
+    <%= f.label :content, "Conteúdo" %>
+    <div class="input"><%= f.text_area :content, :class => "mceEditor span10" %></div>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn success", :value => "✓ Salvar" %>
   </div>
 <% end %>

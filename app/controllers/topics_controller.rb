@@ -2,7 +2,12 @@ class TopicsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:show, :index]
 
-  uses_tiny_mce :only => [:new, :create, :edit, :update]
+  uses_tiny_mce :only => [:new, :create, :edit, :update],:options => {
+                          :theme => 'advanced',
+                          :theme_advanced_resizing => true,
+                          :theme_advanced_resize_horizontal => false,
+                          :plugins => %w{ table fullscreen }
+                        }
   
   # GET /topics
   # GET /topics.xml
@@ -50,12 +55,11 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.xml
   def create
-    @subject = Subject.find(params[:subject_id])
     @topic = @subject.topics.create(params[:topic])
     @topic.user = current_user
     @topic.save
 
-    redirect_to subject_path(@subject)
+    redirect_to subject_path(params[:subject_id])
   end
 
   # PUT /topics/1
@@ -65,7 +69,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
-        format.html { redirect_to(subject_topic_path(params[:subject_id],@topic), :notice => t(:topic_update)) }
+        format.html { redirect_to(subject_path(params[:subject_id]), :notice => t(:topic_update)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,7 +1,15 @@
+<% content_for :questions_options do %>
+
+  <%= link_to '← Voltar', questions_path, :class => "btn" %>
+
+<% end %>
+
 <% content_for :questions_content do %>
-  <fieldset>
-    <legend>Nova pergunta</legend>
-    <%= render 'form' %>
-  </fieldset>
+
+  <h2>Nova pergunta</h2>
+
+  <hr style="margin-top:0;"/>
+
+  <%= render 'form' %>
 
 <% end %>

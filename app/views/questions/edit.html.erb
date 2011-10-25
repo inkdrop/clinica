@@ -1,8 +1,9 @@
 <% content_for :questions_content do %>
   <%= link_to "× Excluir pergunta", @question, :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @question.id != nil && current_user %>
+  <%= link_to '← Voltar', question_path(@question), :class => "btn" %>
   
-  <h2>Editar pergunta</h2>
-  <hr/>
+  <h2>Editar pergunta&nbsp;<small><%= truncate(@question.question, :length => 55, :separator => ' ') %></small></h2>
+  <hr style="margin-top:0;"/>
   <%= render 'form' %>
 
 <% end %>

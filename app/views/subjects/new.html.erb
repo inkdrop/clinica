@@ -1,8 +1,15 @@
+<%= content_for :subject_options do %>
+  
+  <%= link_to '← Voltar', subjects_path, :class => "btn" %>  
+
+<% end %>
+
 <%= content_for :subject_content do %>
   
-  <fieldset>
-    <legend><%=t :new_subject %></legend>
-    <%= render 'form' %>
-  </fieldset>
+  <h2><%=t :new_subject %></h2>
+  
+  <hr style="margin-top:0;"/>
+  
+  <%= render 'form' %>
 
 <% end %>

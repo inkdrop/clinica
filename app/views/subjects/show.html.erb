@@ -1,5 +1,12 @@
+<% content_for :head do %>
+  <script>
+    var disqus_developer = 1; // this would set it to developer mode
+  </script>
+<% end %>
+
 <% content_for :subject_options do %>
-  <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn' if current_user %>
+  <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary' if current_user %>
+  <%= link_to '← Voltar', subjects_path, :class => "btn" %>
 <% end %>
 
 <% content_for :subject_content do %>
@@ -14,5 +21,21 @@
     <span class="alert-message warning"><strong>Atenção!</strong> Nenhum tópico relacionado a este tema.<% if current_user %> Para criar um clique <%= link_to 'aqui', new_subject_topic_path(@subject) %>.<% end %></span>
   <% end %>
   
+  <hr/>
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'cipptoledo'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Favor habilitar o JavaScript para visualizar <a href="http://disqus.com/?ref_noscript">comentários do Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">Comentários by <span class="logo-disqus">Disqus</span></a>
 
 <% end %>

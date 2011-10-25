@@ -1,13 +1,12 @@
 <% content_for :subject_options do %>
   <%= link_to "× Excluir tema", @subject, :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @subject.id != nil && current_user %>
+  <%= link_to '← Voltar', subject_path(@subject), :class => "btn" %>
 <% end %>
   
 <% content_for :subject_content do %>
   
-  <h2><%=t :edit_subject %></h2>
-  <hr/>
+  <h2><%=t :edit_subject %>&nbsp;<small><%= truncate(@subject.title, :length => 55, :separator => ' ') %></small></h2>
+  <hr style="margin-top:0;"/>
   <%= render 'form' %>
 
-  <%= link_to 'Show', @subject %> |
-  <%= link_to 'Back', subject_path(@subject) %>
 <% end %>

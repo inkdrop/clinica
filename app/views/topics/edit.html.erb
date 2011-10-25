@@ -1,13 +1,13 @@
 <% content_for :topic_title do %>
   	
-  	&rarr;&nbsp;<%= link_to @subject.title, subject_path(@subject) %>
+  	<small><%= truncate(@subject.title, :length => 55, :separator => ' ') %></small>
   	
 <% end %>
 
 
 <% content_for :topic_content do %>
 
-  <h2>Editar tópico</h2>
+  <h2>Editar tópico&nbsp;<small><%= truncate(@topic.title, :length => 55, :separator => ' ') %></small></h2>
 
   <%= render 'edit_form' %>
 

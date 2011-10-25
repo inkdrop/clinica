@@ -4,9 +4,17 @@
   </script>
 <% end %>
 
+
+<% content_for :questions_options do %>
+
+  <%= link_to '← Voltar', questions_path, :class => "btn action_button" %>
+
+<% end %>
+
+
 <% content_for :questions_content do %>
 
-  <h2><%= @question.question %><% if current_user %><small>[<%= link_to 'editar', edit_question_path(@question) %>]</small><% end %></h2>
+  <h2><%= @question.question %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_question_path(@question) %>]</small><% end %></h2>
   <div class="tfooter"><%= @question.created_at.strftime("%e %B, %Y %H:%M") %></div>
 
   <%= @question.answer.html_safe %>

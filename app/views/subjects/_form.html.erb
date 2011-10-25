@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="clearfix<% if @subject.errors[:title].any? %> error<% end %>">
-    <%= f.label :title %>
-    <div class="input"><%= f.text_field :title, :class => "span6" %></div>
+    <%= f.label :title, "Título" %>
+    <div class="input"><%= f.text_field :title, :class => "span10" %></div>
   </div>
   
   <div class="clearfix<% if @subject.errors[:description].any? %> error<% end %>">
-    <%= f.label :description %>
-    <div class="input"><%= f.text_field :description, :class => "span6" %></div>
+    <%= f.label :description, "Descrição" %>
+    <div class="input"><%= f.text_field :description, :class => "span10" %></div>
   </div>
   
   <div class="clearfix<% if @subject.errors[:content].any? %> error<% end %>">
-    <%= f.label :content %>
+    <%= f.label :content, "Conteúdo" %>
     <div class="input"><%= f.text_area :content, :class => "mceEditor span10" %></div>
   </div>
   
