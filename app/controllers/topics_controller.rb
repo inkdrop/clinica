@@ -59,7 +59,7 @@ class TopicsController < ApplicationController
     @topic.user = current_user
     @topic.save
 
-    redirect_to subject_path(params[:subject_id])
+    redirect_to subject_path(params[:subject_id], :notice => t(:topic_create_success))
   end
 
   # PUT /topics/1
@@ -85,6 +85,6 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy
 
-    redirect_to subject_path(@subject)
+    redirect_to subject_path(@subject, :notice => t(:topic_destroy_success))
   end
 end

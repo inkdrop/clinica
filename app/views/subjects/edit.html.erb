@@ -1,5 +1,8 @@
+<% content_for :subject_title do %>/Editar tema<% end %>
+
+
 <% content_for :subject_options do %>
-  <%= link_to "× Excluir tema", @subject, :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @subject.id != nil && current_user %>
+  <%= link_to "× Excluir tema", @subject, :class => "btn danger", :confirm => t(:confirm_subject_destroy), :method => :delete if @subject.id != nil && current_user %>
   <%= link_to '← Voltar', subject_path(@subject), :class => "btn" %>
 <% end %>
   

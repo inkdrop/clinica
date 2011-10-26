@@ -12,6 +12,11 @@ pt:
   talk_to_us: Fale conosco
   personal_data: Dados pessoais
   settings: Configurações
+  question_destroy_success: Pergunta excluída com sucesso
+  subject_destroy_success: Tema excluído com sucesso
+  topic_destroy_success: Tópico excluído com sucesso
+  topic_create_success: Tópico criado com sucesso
+  confirm_subject_destroy: Os tópicos vinculados ao tema também serão excluídos. Tem certeza que deseja excluir este registro?
   devise:
     sessions:
       user:

@@ -1,3 +1,6 @@
+<% content_for :title do %>/Perguntas<%= yield :question_title %><% end %>
+
+
 <% content_for :content do %>
   
   <div class="row">
@@ -14,5 +17,6 @@
   </div>
   
 <% end %>
+
 
 <%= render :file => 'layouts/application' %>

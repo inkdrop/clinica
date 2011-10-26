@@ -61,7 +61,7 @@ ul.tmenu li {display: inline;}
   padding-top: 15px;
 }
 
-.title {font-size:1.6em;color: #3C3C3C;}
+.title {font-size:1.6em;color: #3C3C3C;line-height:25px;}
 .title small {color:#BFBFBF;font-size:14px;}
 .list_article {border-bottom:1px dotted #CCCCCC;margin-bottom:20px;padding-bottom:5px;}
 .nav_title {margin-top:0;background:url("/images/border-2px.gif") repeat-x scroll left bottom transparent;border-bottom:1px solid rgba(255, 255, 255, 0.898);}

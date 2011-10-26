@@ -1,10 +1,13 @@
+<% content_for :title do %>/Temas<%= yield :subject_title %><% end %>
+
+
 <%= content_for :content do %>
 
   <div class="row">
     <div class="span11">
       <h1 class="nav_title"><%=t :subjects_label %></h1>
       <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' if current_user %>
-      <%= content_for :subject_options do %><% end %>
+      <%= yield :subject_options %>
       
       <div class="pagination">
         <ul>
@@ -17,7 +20,7 @@
       
       <script>syncLetterPagination('<%= params[:letter] %>');</script>
 
-      <%= content_for(:subject_content) %>
+      <%= yield :subject_content %>
     </div>
     
     <div class="span5 related_sidebar">

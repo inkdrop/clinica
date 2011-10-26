@@ -1,13 +1,18 @@
+<% content_for :subject_title do %>/<%= @subject.title %><% end %>
+
+
 <% content_for :head do %>
   <script>
     var disqus_developer = 1; // this would set it to developer mode
   </script>
 <% end %>
 
+
 <% content_for :subject_options do %>
   <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary' if current_user %>
   <%= link_to '← Voltar', subjects_path, :class => "btn" %>
 <% end %>
+
 
 <% content_for :subject_content do %>
   <h2><%= @subject.title %><% if current_user %><small> [<%= link_to 'editar', edit_subject_path(@subject) %>]</small><% end %></h2>

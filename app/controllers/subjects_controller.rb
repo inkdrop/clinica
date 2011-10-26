@@ -90,7 +90,7 @@ class SubjectsController < ApplicationController
     @subject.destroy
 
     respond_to do |format|
-      format.html { redirect_to(subjects_url) }
+      format.html { redirect_to(subjects_url, :notice => t(:subject_destroy_success)) }
       format.xml  { head :ok }
     end
   end

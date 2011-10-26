@@ -1,12 +1,15 @@
+<% content_for :title do %>/Temas/<%= @subject.title %><%= yield :subject_topic_title %><% end %>
+
+
 <%= content_for :content do %>
   
   <div class="row">
     <div class="span11">
   
-      <h1 class="nav_title"><%=t :subjects_label %><%= content_for :topic_title do %><% end %></h1>
+      <h1 class="nav_title"><%=t :subjects_label %><%= yield :topic_title %></h1>
       
       <%= link_to 'Criar tópico', new_subject_topic_path(@subject), :class => 'btn primary action_button' if current_user %>
-      <%= content_for :topic_options do %><% end %>
+      <%= yield :topic_options %>
 
       <%= content_for :topic_nav do %>
         <div class="pagination">
@@ -19,7 +22,7 @@
         </div>
       <% end %>
 
-      <%= content_for(:topic_content) %>
+      <%= yield :topic_content %>
     </div>
     
     <div class="span5 related_sidebar">
@@ -29,5 +32,6 @@
   </div>
 
 <% end %>
+
 
 <%= render :file => 'layouts/application' %>
