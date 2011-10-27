@@ -55,6 +55,7 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.xml
   def create
+    @subject = Subject.find(params[:subject_id])
     @topic = @subject.topics.create(params[:topic])
     @topic.user = current_user
     @topic.save
