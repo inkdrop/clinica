@@ -17,6 +17,10 @@ pt:
   topic_destroy_success: Tópico excluído com sucesso
   topic_create_success: Tópico criado com sucesso
   confirm_subject_destroy: Os tópicos vinculados ao tema também serão excluídos. Tem certeza que deseja excluir este registro?
+  contact_create_error: Não foi possível enviar sua mensagem. Verifique se todos os dados foram preenchidos corretamente e tente novamente.
+  contacts_destroy_success: Mensagem(ns) excluída(s) com sucesso.
+  contact_mult_destroy_error: Para excluir é necessário selecionar uma ou mais mensagens.
+  captcha_error: O código Captcha informado é inválido. Tente novamente.
   devise:
     sessions:
       user:

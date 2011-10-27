@@ -11,7 +11,10 @@ Clinica::Application.routes.draw do
     resources :topics
   end
   
-  resources :contacts
+  resources :contacts do
+    post 'mult_destroy', :on => :collection
+  end
+  
   match "contato" => "contacts#new"
   #match "noticias" => "news#index"
   match "perguntas" => "questions#index"

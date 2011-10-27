@@ -1,29 +1,24 @@
 <% content_for :title do %>/Caixa de entrada<% end %>
 
 
-<h1 class="nav_title">Lista de Mensagens</h1>
+<h1 class="nav_title">Lista de mensagens</h1>
 
-<%= page_entries_info @contacts %>
-<br/>
-<br/>
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Email</th>
-      <th>Opções</th>
-    </tr>
-  <thead>
-  <% @contacts.each do |c| %>
-    <tr>
-      <td><%= c.firstName << " " << c.lastName %></td>
-      <td><%= c.age %></td>
-      <td><%= c.email %></td>
-      <td><%= link_to 'Mostrar', contact_path(c) %> | <%= link_to 'Excluir', c, :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete %></td>
-    </tr>
-  <% end %>
-  <tr>    
-</table>
-
+<%= form_tag mult_destroy_contacts_path, :method => :post do %>
+  <%= submit_tag "× Excluir marcadas", :class => "btn danger", :confirm => 'Tem certeza que deseja excluir a(s) mensagem(ns) marcada(s)?' %>
+  <br/>
+  <%= page_entries_info @contacts %>
+  <br/>
+  <br/>
+  <table>
+    <% @contacts.each do |c| %>
+      <tr>
+        <td class="<%= c.isRead %>"><%= check_box_tag "contact_ids[]", c.id %></td>
+        <td class="<%= c.isRead %>"><%= link_to c.firstName << " " << c.lastName, contact_path(c) %></td>
+        <td class="<%= c.isRead %>"><%= link_to truncate(c.message, :length => 80, :separator => ' '), contact_path(c) %></td>
+        <td class="<%= c.isRead %>"><%= link_to c.created_at.strftime("%e %B"), contact_path(c) %></td>
+      </tr>
+    <% end %>
+    <tr>    
+  </table>
+<% end %>
 <%= will_paginate @contacts %>

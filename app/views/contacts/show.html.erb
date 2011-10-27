@@ -1,25 +1,27 @@
-<% content_for :title do %>/Caixa de entrada<% end %>
+<% content_for :title do %>/Caixa de entrada/<%= @contact.firstName %><% end %>
 
+
+<h1 class="nav_title">Visualização de mensagem</h1>
+
+<%= link_to "× Excluir mensagem", @contact, :class => "btn danger", :confirm => 'Tem certeza que deseja excluir esta mensagem?', :method => :delete if  current_user %>
+<%= link_to '← Voltar', contacts_path, :class => "btn action_button" %>
 
 <p>
-  <%= @contact.firstName %>
+  De: <%= @contact.firstName << " " << @contact.lastName %>
 </p>
 
 <p>
-  <%= @contact.created_at %>
+  Data: <%= @contact.created_at.strftime("%e %B, %Y %H:%M") %>
 </p>
 
 <p>
-  <%= @contact.email %>
+  Email: <%= @contact.email %>
 </p>
 
 <p>
-  <%= @contact.age %>
+  Idade: <%= @contact.age %>
 </p>
 
 <p>
   <%= @contact.message.html_safe %>
 </p>
-
-
-<%= link_to 'Back', contacts_path %>
