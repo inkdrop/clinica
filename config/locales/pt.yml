@@ -313,4 +313,27 @@ pt:
 
       full_messages:
         format: "%{attribute} %{message}"
+    models:
+      subject: Tema
+      topic: Tópico    
+      question: Pergunta
+      user: Usuário
+      contact: Mensagem
+    attributes:
+      subject:
+        title: "Título"
+        description: "Descrição"
+        content: "Conteúdo"
+      topic:
+        title: "Título"
+        description: "Descrição"
+        content: "Conteúdo"
+      question:
+        question: "Pergunta"
+        answer: "Resposta"
+      contact:
+        firstName: "Nome"
+        lastName: "Sobrenome"
+        message: "Mensagem"
+        age: "Idade"        
 

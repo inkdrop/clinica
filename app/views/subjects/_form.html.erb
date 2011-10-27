@@ -1,7 +1,7 @@
 <%= form_for(@subject, :html => { :class => "form-stacked" }) do |f| %>
   <% if @subject.errors.any? %>
     <div id="error_explanation" class="alert-message error">
-      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+      <h2><%= pluralize(@subject.errors.count, "erro") %> encontrado(s):</h2>
 
       <ul>
       <% @subject.errors.full_messages.each do |msg| %>

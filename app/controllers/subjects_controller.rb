@@ -12,7 +12,7 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.xml
   def index
-    if params[:letter] == nil
+    if params[:letter].blank?
       @subjects = Subject.paginate :page => params[:page], :order => 'title ASC'
     else
       @subjects = Subject.alphabetical_group(params[:letter])

@@ -1,4 +1,4 @@
-<% content_for :title do %>/Caixa de entrada/<%= @contact.firstName %><% end %>
+<%= content_for :title do %>/Caixa de entrada/<%= @contact.firstName %><% end %>
 
 
 <h1 class="nav_title">Visualização de mensagem</h1>
@@ -7,19 +7,19 @@
 <%= link_to '← Voltar', contacts_path, :class => "btn action_button" %>
 
 <p>
-  De: <%= @contact.firstName << " " << @contact.lastName %>
+  <strong>De:</strong> <%= @contact.firstName << " " << @contact.lastName %>
 </p>
 
 <p>
-  Data: <%= @contact.created_at.strftime("%e %B, %Y %H:%M") %>
+  <strong>Data:</strong> <%= I18n.localize(@contact.created_at) %>
 </p>
 
 <p>
-  Email: <%= @contact.email %>
+  <strong>Email:</strong> <%= @contact.email %>
 </p>
 
 <p>
-  Idade: <%= @contact.age %>
+  <strong>Idade:</strong> <%= @contact.age %>
 </p>
 
 <p>

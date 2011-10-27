@@ -12,7 +12,7 @@
 <%= form_for([@subject,@topic], :html => { :class => "form-stacked" }) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation" class="alert-message error">
-      <%= pluralize(@topic.errors.count, "error") %> erro(s) encontrado(s):
+      <%= pluralize(@topic.errors.count, "erro") %> encontrado(s):
 
       <ul>
       <% @topic.errors.full_messages.each do |msg| %>

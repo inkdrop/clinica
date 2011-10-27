@@ -15,7 +15,7 @@
         <td class="<%= c.isRead %>"><%= check_box_tag "contact_ids[]", c.id %></td>
         <td class="<%= c.isRead %>"><%= link_to c.firstName << " " << c.lastName, contact_path(c) %></td>
         <td class="<%= c.isRead %>"><%= link_to truncate(c.message, :length => 80, :separator => ' '), contact_path(c) %></td>
-        <td class="<%= c.isRead %>"><%= link_to c.created_at.strftime("%e %B"), contact_path(c) %></td>
+        <td class="<%= c.isRead %>"><%= link_to I18n.localize(c.created_at, :format => '%e %B'), contact_path(c) %></td>
       </tr>
     <% end %>
     <tr>    
