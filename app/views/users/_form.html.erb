@@ -13,7 +13,7 @@
   <% end %>
   
   <div class="clearfix<% if @user.errors[:name].any? %> error<% end %>">
-    <%= f.label :name %>
+    <%= f.label :name, "Nome" %>
     <div class="input">
       <%= f.text_field :name %>
     </div>
@@ -27,21 +27,21 @@
   </div>
   
   <div class="clearfix<% if @user.errors[:password].any? %> error<% end %>">
-    <%= f.label :password %>
+    <%= f.label :password, "Senha" %>
     <div class="input">
       <%= f.password_field :password %>
     </div>
   </div>
   
   <div class="clearfix<% if @user.errors[:password_confirmation].any? %> error<% end %>">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirmação da senha" %>
     <div class="input">
       <%= f.password_field :password_confirmation %>
     </div>
   </div>
   
   <div class="clearfix<% if @user.errors[:curret_password].any? %> error<% end %>">
-    <%= f.label :current_password %>
+    <%= f.label :current_password, "Senha atual" %>
     <div class="input">
       <%= f.password_field :current_password %>
     </div>
