@@ -1,13 +1,13 @@
 #container {
-	width:580px;
+	width:780px;
 	padding:10px;
-	margin:0 auto;
+	/*margin:0 auto;*/
 	position:relative;
 	z-index:0;
 }
 
 #example {
-	width:600px;
+	width:777px;
 	height:350px;
 	position:relative;
 }
@@ -22,7 +22,7 @@
 #frame {
 	position:absolute;
 	z-index:0;
-	width:739px;
+	width:940px;
 	height:341px;
 	top:-3px;
 	left:-80px;
@@ -37,6 +37,7 @@
 	top:15px;
 	left:4px;
 	z-index:100;
+	width:770px;
 }
 
 /*
@@ -47,7 +48,7 @@
 */
 
 .slides_container {
-	width:570px;
+	width:770px;
 	overflow:hidden;
 	position:relative;
 	display:none;
@@ -86,7 +87,7 @@
 }
 
 #slides .next {
-	left:585px;
+	left:785px;
 }
 
 /*
