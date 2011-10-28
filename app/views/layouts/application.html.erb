@@ -60,7 +60,7 @@
       <%= content_for?(:content) ? yield(:content) : yield %>
       
       <footer>
-        <p>&copy; 2011 Clínica Integrada de Psiquiatria e Psicologia</p>
+        <div align="center"><p style="font-size:10px;color:#BFBFBF">&copy; <%= Time.now.strftime("%Y") %> Clínica Integrada de Psiquiatria e Psicologia</p></div>
       </footer>
       
     </div>
