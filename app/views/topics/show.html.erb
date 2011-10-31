@@ -14,6 +14,7 @@
 
 
 <% content_for :topic_options do %>
+  <%= link_to "× Excluir tópico", subject_topic_path(@subject,@topic), :class => "btn danger", :confirm => 'Tem certeza que deseja excluir este registro?', :method => :delete if @topic.id != nil && current_user %>
   <%= link_to '← Voltar', subject_path(@subject), :class => "btn" %>
 <% end %>
 

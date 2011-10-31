@@ -1,5 +1,5 @@
 <hr/>
-<div class="title"><%= link_to topic.title, subject_topic_path(topic.subject, topic) %> 
+<div class="title"><%= link_to topic.title, subject_topic_path(topic.subject, topic), :title => topic.description %> 
   <% if current_user %><small>[<%= link_to 'editar', edit_subject_topic_path(@subject, topic) %>]</small><% end %>
 </div>
 <div class="tfooter"><%= I18n.localize(topic.created_at, :format => "%e %B, %Y %H:%M") %> | <%= topic.user %></div>

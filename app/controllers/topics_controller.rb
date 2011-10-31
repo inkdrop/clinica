@@ -93,10 +93,10 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.xml
   def destroy
-    @subject = Subject.find(params[:subject_id])
+    #@subject = Subject.find(params[:subject_id])
     @topic = Topic.find(params[:id])
     @topic.destroy
 
-    redirect_to subject_path(@subject, :notice => t(:topic_destroy_success))
+    redirect_to subject_path(params[:subject_id]), :notice => t(:topic_destroy_success)
   end
 end

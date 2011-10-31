@@ -19,7 +19,7 @@
   <% if @subjects.size > 0 %>
     <% @subjects.each do |s| %>
       <div class="list_article">
-        <div class="title"><%= link_to s.title, subject_path(s) %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_subject_path(s) %>]</small><% end %></div>
+        <div class="title"><%= link_to s.title, subject_path(s), :title => s.description %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_subject_path(s) %>]</small><% end %></div>
         <div class="tfooter"><%= I18n.localize(s.created_at, :format => "%e %B, %Y %H:%M") %> | <%= s.user %></div>
         <%= sanitize(truncate(s.content, :length => 390, :separator => ' ')) %>
       </div>

@@ -313,6 +313,21 @@ pt:
 
       full_messages:
         format: "%{attribute} %{message}"
+        
+      models:
+        topic:
+          attributes:
+            title:
+              taken: "já está sendo usado em outro tema. Utilize um título diferente."
+        subject:
+          attributes:
+            title:
+              taken: "já está sendo usado em outro tema. Utilize um título diferente."
+        question:
+          attributes:
+            question:
+              taken: "já existe."
+          
     models:
       subject: Tema
       topic: Tópico    

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031111558) do
+ActiveRecord::Schema.define(:version => 20111031163439) do
 
   create_table "contacts", :force => true do |t|
     t.string   "firstName"
@@ -42,6 +42,20 @@ ActiveRecord::Schema.define(:version => 20111031111558) do
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["question"], :name => "index_questions_on_question", :unique => true
+
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
   create_table "subjects", :force => true do |t|
     t.string   "title"
     t.string   "description"
@@ -51,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20111031111558) do
     t.datetime "updated_at"
   end
 
+  add_index "subjects", ["title"], :name => "index_subjects_on_title", :unique => true
   add_index "subjects", ["user_id"], :name => "index_subjects_on_user_id"
 
   create_table "topics", :force => true do |t|
@@ -63,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20111031111558) do
     t.datetime "updated_at"
   end
 
+  add_index "topics", ["title"], :name => "index_topics_on_title", :unique => true
   add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
