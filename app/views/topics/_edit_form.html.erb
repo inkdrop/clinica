@@ -23,17 +23,17 @@
   <% end %>
 
   <div class="clearfix<% if @topic.errors[:title].any? %> error<% end %>">
-    <%= f.label :title, "Título" %>
+    <%= f.label :title, "Título *" %>
     <div class="input"><%= f.text_field :title, :class => "span10" %></div>
   </div>
 
   <div class="clearfix<% if @topic.errors[:description].any? %> error<% end %>">
-    <%= f.label :description, "Descrição" %>
+    <%= f.label :description, "Descrição *" %>
     <div class="input"><%= f.text_field :description, :class => "span10" %></div>
   </div>
 
   <div class="clearfix<% if @topic.errors[:content].any? %> error<% end %>">
-    <%= f.label :content, "Conteúdo" %>
+    <%= f.label :content, "Conteúdo *" %>
     <div class="input"><%= f.text_area :content, :class => "mceEditor span10" %></div>
   </div>
   

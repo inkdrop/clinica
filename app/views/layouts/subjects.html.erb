@@ -7,19 +7,11 @@
     <div class="span11">
       <h1 class="nav_title"><%=t :subjects_label %></h1>
       <%= link_to 'Criar tema', new_subject_path, :class => 'btn primary' if current_user %>
+     
       <%= yield :subject_options %>
       
-      <div class="pagination">
-        <ul>
-          <li id="letter_todos"><%= link_to "Todos", temas_path %></li>
-          <% Subject.pagination_letters.each do |letter| %>
-            <li id="letter_<%= letter %>"><%= link_to(letter, temas_path(:letter => letter)) %></li>
-          <% end %>
-        </ul>
-      </div>
+      <%= yield :subject_letter_pag %>
       
-      <script>syncLetterPagination('<%= params[:letter] %>');</script>
-
       <%= yield :subject_content %>
     </div>
     

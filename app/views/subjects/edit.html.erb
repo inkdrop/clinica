@@ -8,7 +8,7 @@
   
 <% content_for :subject_content do %>
   
-  <h2><%=t :edit_subject %>&nbsp;<small><%= truncate(@subject.title, :length => 55, :separator => ' ') %></small></h2>
+  <h2 style="margin-top:18px;"><%=t :edit_subject %>&nbsp;<small><%= truncate(@subject.title, :length => 55, :separator => ' ') %></small></h2>
   <hr style="margin-top:0;"/>
   <%= render 'form' %>
 

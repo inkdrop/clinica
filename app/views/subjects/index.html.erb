@@ -1,3 +1,17 @@
+<%= content_for :subject_letter_pag do %>
+  <div class="pagination">
+    <ul>
+      <li id="letter_todos"><%= link_to "Todos", temas_path %></li>
+      <% Subject.pagination_letters.each do |letter| %>
+        <li id="letter_<%= letter %>"><%= link_to(letter, temas_path(:letter => letter)) %></li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <script>syncLetterPagination('<%= params[:letter] %>');</script>
+<% end %>
+
+
 <%= content_for :subject_content do %>
   
   <% if params[:letter].blank? %><div class="pages_helper"><%= page_entries_info @subjects %></div><% end %>
