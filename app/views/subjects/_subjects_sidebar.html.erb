@@ -1,2 +1,9 @@
 <h6>Veja Também</h6>
-<p>Sidebar here yo!</p>
+
+<% @random_subjects.each do |s| %>
+  <div class="list_article">
+    <%= link_to s.title, subject_path(s) %><% if current_user %>&nbsp;[<%= link_to 'editar', edit_subject_path(s) %>]<% end %>
+    <br/>
+    <%= sanitize(truncate(s.content, :length => 200, :separator => ' ')) %>
+  </div>
+<% end %>
