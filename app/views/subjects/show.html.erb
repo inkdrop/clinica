@@ -17,9 +17,9 @@
 <%= content_for :subject_letter_pag do %>
   <div class="pagination">
     <ul>
-      <li id="letter_todos"><%= link_to "Todos", temas_path %></li>
+      <li id="letter_todos"><%= link_to "Todos", subjects_path %></li>
       <% Subject.pagination_letters.each do |letter| %>
-        <li id="letter_<%= letter %>"><%= link_to(letter, temas_path(:letter => letter)) %></li>
+        <li id="letter_<%= letter %>"><%= link_to(letter, subjects_path(:letter => letter)) %></li>
       <% end %>
     </ul>
   </div>
