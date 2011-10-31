@@ -25,7 +25,7 @@
       </div>
     <% end %>
   <% else %>
-    <h3>Nenhum tema econtrado</h3>
+    <div class="alert-message warning"><strong>Atenção!</strong>&nbsp;Nenhum tema encontrado.</div>
   <% end %>  
   
   <%= will_paginate(@subjects, :renderer => BootstrapLinkRenderer) if params[:letter].blank? %>
