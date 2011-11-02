@@ -1,19 +1,370 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  topic_update: Topic was successfuly updated.
-  new_subject: New subject
-  edit_subject: Edit subject
-  new_news: Create news
-  edit_news: Editing news
-  edit_topic: Editing topic
-  new_topic: New topic
-  news_label: News articles
-  subjects_label: Subjects articles
-  visit_us: Pay us a visit
-  talk_to_us: Get in touch
-  personal_data: Personal data
-  settings: Settings
-  #Atributos dos models
+  topic_update: Tópico atualizado com sucesso.
+  new_subject: Novo tema
+  edit_subject: Editar tema
+  new_news: Nova notícia
+  edit_news: Editando notícia
+  edit_topic: Editando tópico
+  new_topic: Novo tópico
+  news_label: Notícias
+  subjects_label: Temas
+  visit_us: Venha nos visitar
+  talk_to_us: Fale conosco
+  personal_data: Dados pessoais
+  settings: Configurações
+  question_destroy_success: Pergunta excluída com sucesso
+  subject_destroy_success: Tema excluído com sucesso
+  topic_destroy_success: Tópico excluído com sucesso
+  topic_create_success: Tópico criado com sucesso
+  confirm_subject_destroy: Os tópicos vinculados ao tema também serão excluídos. Tem certeza que deseja excluir este registro?
+  contact_create_error: Não foi possível enviar sua mensagem. Verifique se todos os dados foram preenchidos corretamente e tente novamente.
+  contacts_destroy_success: Mensagem(ns) excluída(s) com sucesso.
+  contact_mult_destroy_error: Para excluir é necessário selecionar uma ou mais mensagens.
+  captcha_error: O código Captcha informado é inválido. Tente novamente.
+  devise:
+    sessions:
+      user:
+        signed_out: Saída do sistema realizada com sucesso.
+        signed_in: Entrada no sistema realizada com sucesso.
   
+  #Atributos dos form helpers
+  helpers:
+    label:
+      subject: 
+        title: Título
+        description: Descrição
+        content: Conteúdo
+      news: 
+        title: Título
+        content: Conteúdo
+        picture: Imagem
+      contact:
+        firstName: Nome
+        lastName: Sobrenome
+        age: Idade
+        message: Mensagem
+      question:
+        question: Pergunta
+        answer: Resposta
+    submit:
+      subject:
+        create: Criar Tema
+        update: Salvar Tema
+      news:
+        create: Criar Notícia
+        update: Salvar Notícia
+      topic:
+        create: Criar Tópico
+        update: Salvar Tópico
+      contact:
+        create: Enviar
+  
+  #will_paginate
+  will_paginate:
+    page_entries_info:
+      single_page:
+        zero:  "Nenhum(a) %{model} encontrado(a)"
+        one:   "Exibindo 1 %{model}"
+        other: "Exibindo todos(as) %{count} %{model}"
+      single_page_html:
+        zero:  "Nenhum(a) %{model} encontrado(a)"
+        one:   "Exibindo <b>1</b> %{model}"
+        other: "Exibindo <b>todos(as)&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Exibindo %{model} %{from} - %{to} de um total de %{count}"
+      multi_page_html: "Exibindo %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de um total de <b>%{count}</b>"
+    models:
+      topic:
+        zero: Tópico
+        one: Tópico
+        few: Tópicos
+        other: Tópicos
+      subject:
+        zero: Tema
+        one: Tema
+        few: Temas
+        other: Temas
+      question:
+        zero: Pergunta
+        one: Pergunta
+        few: Perguntas
+        other: Perguntas
+    previous_label: "&#8592; Anterior"
+    next_label: "Próxima &#8594;"
+    page_gap: "&hellip;"
+  
+  # formatos de data e hora
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+
+    day_names:
+      - Domingo
+      - Segunda
+      - Terça
+      - Quarta
+      - Quinta
+      - Sexta
+      - Sábado
+    abbr_day_names:
+      - Dom
+      - Seg
+      - Ter
+      - Qua
+      - Qui
+      - Sex
+      - Sáb
+
+    month_names:
+      - ~
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+    abbr_month_names:
+      - ~
+      - Jan
+      - Fev
+      - Mar
+      - Abr
+      - Mai
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Out
+      - Nov
+      - Dez
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
+    am: ''
+    pm: ''
+
+  # Usado no Array.to_sentence
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+    select:
+      prompt: "Por favor selecione"
+
+  number:
+    format:
+      separator: ','
+      delimiter: '.'
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+
+    currency:
+      format:
+        format: '%u %n'
+        unit: 'R$'
+        separator: ','
+        delimiter: '.'
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: '.'
+
+    precision:
+      format:
+        delimiter: '.'
+
+    human:
+      format:
+        delimiter: '.'
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+
+  # distancia do tempo em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de %{count} segundos'
+      x_seconds:
+        one: '1 segundo'
+        other: '%{count} segundos'
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de %{count} minutos'
+      x_minutes:
+        one: '1 minuto'
+        other: '%{count} minutos'
+      about_x_hours:
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente %{count} horas'
+      x_days:
+        one: '1 dia'
+        other: '%{count} dias'
+      about_x_months:
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente %{count} meses'
+      x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente %{count} anos'
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de %{count} anos'
+      almost_x_years:
+        one: 'quase 1 ano'
+        other: 'quase %{count} anos'
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundo"
+
+  helpers:
+    select:
+      prompt: "Por favor selecione"
+
+    submit:
+      create: 'Criar %{model}'
+      update: 'Atualizar %{model}'
+      submit: 'Salvar %{model}'
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    template:
+      header:
+        one: "Não foi possível gravar %{model}: 1 erro"
+        other: "Não foi possível gravar %{model}: %{count} erros."
+      body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+
+    messages: &errors_messages
+      inclusion: "não está incluído na lista"
+      exclusion: "não está disponível"
+      invalid: "não é válido"
+      confirmation: "não está de acordo com a confirmação"
+      accepted: "deve ser aceito"
+      empty: "não pode ficar vazio"
+      blank: "não pode ficar em branco"
+      too_long: "é muito longo (máximo: %{count} caracteres)"
+      too_short: "é muito curto (mínimo: %{count} caracteres)"
+      wrong_length: "não possui o tamanho esperado (%{count} caracteres)"
+      not_a_number: "não é um número"
+      not_an_integer: "não é um número inteiro"
+      greater_than: "deve ser maior que %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      equal_to: "deve ser igual a %{count}"
+      less_than: "deve ser menor que %{count}"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      odd: "deve ser ímpar"
+      even: "deve ser par"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+
+      messages:
+        taken: "já está em uso"
+        record_invalid: "A validação falhou: %{errors}"
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute} %{message}"
+        
+      models:
+        topic:
+          attributes:
+            title:
+              taken: "já está sendo usado em outro tema. Utilize um título diferente."
+        subject:
+          attributes:
+            title:
+              taken: "já está sendo usado em outro tema. Utilize um título diferente."
+        question:
+          attributes:
+            question:
+              taken: "já existe."
+          
+    models:
+      subject: Tema
+      topic: Tópico    
+      question: Pergunta
+      user: Usuário
+      contact: Mensagem
+    attributes:
+      subject:
+        title: "Título"
+        description: "Descrição"
+        content: "Conteúdo"
+      topic:
+        title: "Título"
+        description: "Descrição"
+        content: "Conteúdo"
+      question:
+        question: "Pergunta"
+        answer: "Resposta"
+      contact:
+        firstName: "Nome"
+        lastName: "Sobrenome"
+        message: "Mensagem"
+        age: "Idade"        
+

@@ -1,5 +1,8 @@
 class Question < ActiveRecord::Base
 
+  include PgSearch
+  multisearchable :against => [:question, :answer]
+
   validates :question, :answer, :presence => true
   validates :question, :length => {:minimum => 6, :maximum => 255}
   validates :question, :uniqueness => true

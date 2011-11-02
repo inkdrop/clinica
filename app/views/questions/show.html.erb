@@ -17,10 +17,10 @@
 
 <% content_for :questions_content do %>
 
-  <h2><%= @question.question %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_question_path(@question) %>]</small><% end %></h2>
+  <h2><%= highlight(@question.question, params[:q]) %><% if current_user %><small>&nbsp;[<%= link_to 'editar', edit_question_path(@question) %>]</small><% end %></h2>
   <div class="tfooter"><%= I18n.localize(@question.created_at, :format => "%e %B, %Y %H:%M") %></div>
 
-  <%= @question.answer.html_safe %>
+  <%= highlight(@question.answer.html_safe, params[:q]) %>
   
   <hr/>
   

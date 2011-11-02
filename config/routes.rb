@@ -1,5 +1,8 @@
 Clinica::Application.routes.draw do
 
+  #get "busca/index"
+  resources :busca, :only => :index
+  
   devise_for :users, :skip => :registrations
   resources :users, :only => [:edit, :update]
 

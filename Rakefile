@@ -5,3 +5,5 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 Clinica::Application.load_tasks
+
+load "pg_search/tasks.rb"

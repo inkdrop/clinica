@@ -21,18 +21,18 @@
 
 <% content_for :topic_content do %>
   <h2>
-    <%= @topic.title %>
+    <%= highlight(@topic.title, params[:q]) %>
     <% if current_user %><small>[<%= link_to 'editar', edit_subject_topic_path(@subject,@topic) %>]</small><% end %>
   </h2>
   
   <div class="tfooter"><%= I18n.localize(@topic.created_at, :format => "%e %B, %Y %H:%M") %> | <%= @topic.user %></div>
   
   <p>
-    <%= @topic.description %>
+    <%= highlight(@topic.description, params[:q]) %>
   </p>
 
   <p>
-    <%= @topic.content.html_safe %>
+    <%= highlight(@topic.content.html_safe, params[:q]) %>
   </p>
   
   <hr/>

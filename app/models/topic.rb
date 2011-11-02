@@ -1,4 +1,8 @@
 class Topic < ActiveRecord::Base
+
+  include PgSearch
+  multisearchable :against => [:title, :description, :content]
+
   belongs_to :user
   belongs_to :subject
   

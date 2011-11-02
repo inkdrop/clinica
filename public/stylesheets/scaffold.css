@@ -74,6 +74,8 @@ ul.tmenu li {display: inline;}
 #map {height:320px;border:1px solid #CCCCCC;}
 footer {margin-top: 17px;padding-top: 17px;background:url("/images/border_footer.gif") repeat-x scroll left top transparent;border-top:1px solid rgba(255, 255, 255, 0.898);}
 .read {background-color:#DEFAD7;}
+.highlight {background-color:#DEFAD7;}
 .unread {background-color:#F6FAD7;}
 .message_bg {background-color:#F2F2F2;}
 .light_grey {color:#BEBEBE;}
+.search_btn {background-image:url("/images/lupa.png")}

@@ -29,10 +29,10 @@
 
 
 <% content_for :subject_content do %>
-  <h2><%= @subject.title %><% if current_user %><small> [<%= link_to 'editar', edit_subject_path(@subject) %>]</small><% end %></h2>
+  <h2><%= highlight(@subject.title, params[:q]) %><% if current_user %><small> [<%= link_to 'editar', edit_subject_path(@subject) %>]</small><% end %></h2>
   <div class="tfooter"><%= I18n.localize(@subject.created_at, :format => "%e %B, %Y %H:%M") %> | <%= @subject.user %></div>
 
-  <p><%= @subject.content.html_safe %></p>
+  <p><%= highlight(@subject.content.html_safe, params[:q]) %></p>
   
   <% if @subject.topics.size > 0 %>
     <%= render :partial => "topics/topic_partial", :collection => @subject.topics, :as => :topic %>

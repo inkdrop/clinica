@@ -61,9 +61,6 @@ pt:
   
   #will_paginate
   will_paginate:
-    previous_label: "&#8592; Anterior"
-    next_label: "Próxima &#8594;"
-    page_gap: "&hellip;"
     page_entries_info:
       single_page:
         zero:  "Nenhum(a) %{model} encontrado(a)"
@@ -76,6 +73,25 @@ pt:
 
       multi_page: "Exibindo %{model} %{from} - %{to} de um total de %{count}"
       multi_page_html: "Exibindo %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de um total de <b>%{count}</b>"
+    models:
+      topic:
+        zero: Tópico
+        one: Tópico
+        few: Tópicos
+        other: Tópicos
+      subject:
+        zero: Tema
+        one: Tema
+        few: Temas
+        other: Temas
+      question:
+        zero: Pergunta
+        one: Pergunta
+        few: Perguntas
+        other: Perguntas
+    previous_label: "&#8592; Anterior"
+    next_label: "Próxima &#8594;"
+    page_gap: "&hellip;"
   
   # formatos de data e hora
   date:

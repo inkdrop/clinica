@@ -62,6 +62,9 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     pg (0.11.0)
+    pg_search (0.3.3)
+      activerecord (>= 3)
+      activesupport (>= 3)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -106,6 +109,7 @@ DEPENDENCIES
   paginate_alphabetically!
   paperclip (~> 2.4)
   pg
+  pg_search
   rails (= 3.0.9)
   recaptcha
   sqlite3-ruby
