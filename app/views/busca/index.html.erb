@@ -2,18 +2,22 @@
   <div class="span11">
     <h1 class="nav_title">Busca&nbsp;<small><%= params[:q] %></small></h1>
     
-    <div class="pages_helper"><%= page_entries_info @resultado %></div>
-
-    <% @resultado.each do |r| %>
-      <div class="list_article">
-        <%= link_to(sanitize(truncate(r.content, :length => 180, :separator => ' ')), polymorphic_path(r.searchable, q: params[:q])) if r.searchable_type != 'Topic' %>
-        
-        <%= link_to(sanitize(truncate(r.content, :length => 180, :separator => ' ')), subject_topic_path(r.searchable.subject,r.searchable, q: params[:q])) if r.searchable_type == 'Topic' %>
+    <% if @resultado.size == 0 %>
+      <div class="alert-message warning"><strong>Atenção!</strong>&nbsp;Nenhum resultado encontrado.</div>
+    <% else %>
+      <div class="pages_helper"><%= page_entries_info @resultado %></div>
       
-      </div>
+      <% @resultado.each do |r| %>
+        <div class="list_article">
+          <%= link_to(sanitize(truncate(r.content, :length => 180, :separator => ' ')), polymorphic_path(r.searchable, q: params[:q])) if r.searchable_type != 'Topic' %>
+          
+          <%= link_to(sanitize(truncate(r.content, :length => 180, :separator => ' ')), subject_topic_path(r.searchable.subject,r.searchable, q: params[:q])) if r.searchable_type == 'Topic' %>
+        
+        </div>
+      <% end %>    
+      
+      <%= will_paginate(@resultado, :renderer => BootstrapLinkRenderer) if params[:letter].blank? %>
     <% end %>
-
-    <%= will_paginate(@resultado, :renderer => BootstrapLinkRenderer) if params[:letter].blank? %>
   </div>
   
   <div class="span5 related_sidebar">

@@ -45,7 +45,7 @@
             <li id="nav-contato"><%= link_to "IV. Contato",contato_path %></li>
           </ul>
           <%= form_tag busca_index_path, :method => :get do %>
-            <%= text_field_tag(:q, nil, :placeholder => "Pesquisar", :title => "Para pesquisar informe o termo da busca e em seguida pressione Enter") %>
+            <%= text_field_tag(:q, nil, :placeholder => "Pesquisar", :title => "Digite o que está buscando e em seguida pressione Enter") %>
           <% end %>
           <%= render 'devise/menu/login_items' %>
           <%= render 'devise/menu/registration_items' %>

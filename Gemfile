@@ -6,7 +6,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 gem 'tiny_mce'
-gem 'will_paginate', '~> 3.0.pre2'
+gem 'will_paginate', '~> 3.0'
 gem 'paginate_alphabetically', git: 'git://github.com/edendevelopment/paginate_alphabetically.git', branch: 'bundler'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'paperclip', '~> 2.4'

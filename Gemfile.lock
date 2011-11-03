@@ -98,7 +98,7 @@ GEM
     tzinfo (0.3.28)
     warden (1.0.4)
       rack (>= 1.0)
-    will_paginate (3.0.pre2)
+    will_paginate (3.0.2)
 
 PLATFORMS
   ruby
@@ -114,4 +114,4 @@ DEPENDENCIES
   recaptcha
   sqlite3-ruby
   tiny_mce
-  will_paginate (~> 3.0.pre2)
+  will_paginate (~> 3.0)
